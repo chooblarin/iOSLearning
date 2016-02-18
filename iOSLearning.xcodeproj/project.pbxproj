@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		FABB078F1C746945008CAB48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB078E1C746945008CAB48 /* AppDelegate.swift */; };
 		FABB07911C746945008CAB48 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB07901C746945008CAB48 /* MasterViewController.swift */; };
-		FABB07931C746945008CAB48 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB07921C746945008CAB48 /* DetailViewController.swift */; };
 		FABB07961C746945008CAB48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABB07941C746945008CAB48 /* Main.storyboard */; };
 		FABB07981C746945008CAB48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FABB07971C746945008CAB48 /* Assets.xcassets */; };
 		FABB079B1C746945008CAB48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABB07991C746945008CAB48 /* LaunchScreen.storyboard */; };
 		FABB07A61C746945008CAB48 /* iOSLearningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB07A51C746945008CAB48 /* iOSLearningTests.swift */; };
+		FABB07B11C746C68008CAB48 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB07B01C746C68008CAB48 /* Example.swift */; };
+		FABB07B31C747053008CAB48 /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABB07B21C747053008CAB48 /* Alert.storyboard */; };
+		FABB07B51C74708C008CAB48 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB07B41C74708C008CAB48 /* AlertViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +32,6 @@
 		FABB078B1C746945008CAB48 /* iOSLearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSLearning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABB078E1C746945008CAB48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FABB07901C746945008CAB48 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		FABB07921C746945008CAB48 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FABB07951C746945008CAB48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FABB07971C746945008CAB48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FABB079A1C746945008CAB48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +39,9 @@
 		FABB07A11C746945008CAB48 /* iOSLearningTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSLearningTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABB07A51C746945008CAB48 /* iOSLearningTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSLearningTests.swift; sourceTree = "<group>"; };
 		FABB07A71C746945008CAB48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FABB07B01C746C68008CAB48 /* Example.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
+		FABB07B21C747053008CAB48 /* Alert.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
+		FABB07B41C74708C008CAB48 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA0E1AE01C75615F00CD7ADF /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				FABB07B21C747053008CAB48 /* Alert.storyboard */,
+				FABB07B41C74708C008CAB48 /* AlertViewController.swift */,
+			);
+			name = Alert;
+			sourceTree = "<group>";
+		};
 		FABB07821C746945008CAB48 = {
 			isa = PBXGroup;
 			children = (
@@ -81,7 +94,8 @@
 			children = (
 				FABB078E1C746945008CAB48 /* AppDelegate.swift */,
 				FABB07901C746945008CAB48 /* MasterViewController.swift */,
-				FABB07921C746945008CAB48 /* DetailViewController.swift */,
+				FA0E1AE01C75615F00CD7ADF /* Alert */,
+				FABB07B01C746C68008CAB48 /* Example.swift */,
 				FABB07941C746945008CAB48 /* Main.storyboard */,
 				FABB07971C746945008CAB48 /* Assets.xcassets */,
 				FABB07991C746945008CAB48 /* LaunchScreen.storyboard */,
@@ -183,6 +197,7 @@
 				FABB079B1C746945008CAB48 /* LaunchScreen.storyboard in Resources */,
 				FABB07981C746945008CAB48 /* Assets.xcassets in Resources */,
 				FABB07961C746945008CAB48 /* Main.storyboard in Resources */,
+				FABB07B31C747053008CAB48 /* Alert.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,9 +215,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FABB07931C746945008CAB48 /* DetailViewController.swift in Sources */,
+				FABB07B11C746C68008CAB48 /* Example.swift in Sources */,
 				FABB07911C746945008CAB48 /* MasterViewController.swift in Sources */,
 				FABB078F1C746945008CAB48 /* AppDelegate.swift in Sources */,
+				FABB07B51C74708C008CAB48 /* AlertViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +408,7 @@
 				FABB07AC1C746945008CAB48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FABB07AD1C746945008CAB48 /* Build configuration list for PBXNativeTarget "iOSLearningTests" */ = {
 			isa = XCConfigurationList;
@@ -400,6 +417,7 @@
 				FABB07AF1C746945008CAB48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
