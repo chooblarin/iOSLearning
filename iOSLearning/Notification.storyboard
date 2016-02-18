@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="b0L-Ya-5cJ">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--Notification View Controller-->
+        <scene sceneID="aIq-Sc-efT">
+            <objects>
+                <viewController id="wvR-b0-o8J" customClass="NotificationViewController" customModule="iOSLearning" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ab2-tV-4IP"/>
+                        <viewControllerLayoutGuide type="bottom" id="p0d-YR-Eau"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2jk-cq-0Ye">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5aP-gu-Gfe">
+                                <rect key="frame" x="202" y="184" width="197" height="30"/>
+                                <state key="normal" title="Local Notification after 5 sec"/>
+                                <connections>
+                                    <action selector="notifyAfterFiveSec:" destination="wvR-b0-o8J" eventType="touchUpInside" id="jtc-jW-4vR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfx-AE-osC">
+                                <rect key="frame" x="193" y="226" width="215" height="30"/>
+                                <state key="normal" title="Local Notification every minitue"/>
+                                <connections>
+                                    <action selector="notifyEveryMinute:" destination="wvR-b0-o8J" eventType="touchUpInside" id="TPA-XJ-P5E"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vug-DO-ahz">
+                                <rect key="frame" x="200" y="268" width="200" height="30"/>
+                                <state key="normal" title="Local Notification with Action"/>
+                                <connections>
+                                    <action selector="notifyWithAction:" destination="wvR-b0-o8J" eventType="touchUpInside" id="DmO-Id-ENb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Pp-mG-acH">
+                                <rect key="frame" x="187" y="322" width="227" height="30"/>
+                                <state key="normal" title="Register for Remote Notifications"/>
+                                <connections>
+                                    <action selector="registerDevice:" destination="wvR-b0-o8J" eventType="touchUpInside" id="g4D-6n-tDv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cfx-AE-osC" firstAttribute="top" secondItem="5aP-gu-Gfe" secondAttribute="bottom" constant="12" id="8Gg-RI-aga"/>
+                            <constraint firstItem="5aP-gu-Gfe" firstAttribute="centerX" secondItem="2jk-cq-0Ye" secondAttribute="centerX" id="BeO-rX-kXS"/>
+                            <constraint firstItem="5aP-gu-Gfe" firstAttribute="top" secondItem="ab2-tV-4IP" secondAttribute="bottom" constant="120" id="ChK-xS-hXu"/>
+                            <constraint firstItem="1Pp-mG-acH" firstAttribute="top" secondItem="Vug-DO-ahz" secondAttribute="bottom" constant="24" id="GfB-Ay-Hg2"/>
+                            <constraint firstItem="Vug-DO-ahz" firstAttribute="centerX" secondItem="2jk-cq-0Ye" secondAttribute="centerX" id="ITN-we-mRY"/>
+                            <constraint firstItem="1Pp-mG-acH" firstAttribute="centerX" secondItem="2jk-cq-0Ye" secondAttribute="centerX" id="fTa-Rg-PTz"/>
+                            <constraint firstItem="Vug-DO-ahz" firstAttribute="top" secondItem="cfx-AE-osC" secondAttribute="bottom" constant="12" id="fu9-oY-BdT"/>
+                            <constraint firstItem="cfx-AE-osC" firstAttribute="centerX" secondItem="2jk-cq-0Ye" secondAttribute="centerX" id="nni-o6-CFS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Za8-rc-sHD">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cAn-V5-bFd">
+                            <connections>
+                                <action selector="dismiss:" destination="wvR-b0-o8J" id="h6u-sc-jxt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b7Q-7H-Emw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1001" y="325"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VlB-qW-tB1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b0L-Ya-5cJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PAb-Ue-bid">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wvR-b0-o8J" kind="relationship" relationship="rootViewController" id="bfE-en-RzR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VTI-bk-I8V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="189" y="325"/>
+        </scene>
+    </scenes>
+</document>

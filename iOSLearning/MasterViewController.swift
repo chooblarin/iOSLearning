@@ -11,6 +11,7 @@ class MasterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         examples.append(.Alert)
+        examples.append(.Notification)
     }
 
     // MARK: - Table View
@@ -37,11 +38,14 @@ class MasterViewController: UITableViewController {
     }
 
     private func open(example: Example) {
+        let storyBoard: UIStoryboard
         switch example {
         case .Alert:
-            let storyBoard = UIStoryboard(name: "Alert", bundle: nil)
-            let viewController = storyBoard.instantiateInitialViewController()!
-            presentViewController(viewController, animated: true, completion: nil)
+            storyBoard = UIStoryboard(name: "Alert", bundle: nil)
+        case .Notification:
+            storyBoard = UIStoryboard(name: "Notification", bundle: nil)
         }
+        let viewController = storyBoard.instantiateInitialViewController()!
+        presentViewController(viewController, animated: true, completion: nil)
     }
 }
