@@ -8,7 +8,11 @@ class NotificationViewController: UIViewController {
         registerNotification()
 
         let notificationCenter = NSNotificationCenter.defaultCenter()
-        notificationCenter.addObserver(self, selector: "handleNotification", name: "notification", object: nil)
+        notificationCenter.addObserver(
+            self,
+            selector: #selector(NotificationViewController.handleNotification),
+            name: "notification",
+            object: nil)
     }
 
     // MARK: - IBActions
