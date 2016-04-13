@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA0BF5EC1C815A3700A06ED6 /* PagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0BF5EB1C815A3700A06ED6 /* PagerViewController.swift */; };
-		FA0BF5EE1C815A7F00A06ED6 /* Pager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0BF5ED1C815A7F00A06ED6 /* Pager.storyboard */; };
 		FA0BF5EF1C815DE200A06ED6 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA0BF5E91C81591500A06ED6 /* RxSwift.framework */; };
 		FA0BF5F01C815DEF00A06ED6 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA0BF5E71C81590700A06ED6 /* RxCocoa.framework */; };
 		FA0E1AE21C75650000CD7ADF /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0E1AE11C75650000CD7ADF /* Notification.storyboard */; };
@@ -22,6 +20,8 @@
 		FABB07B11C746C68008CAB48 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB07B01C746C68008CAB48 /* Example.swift */; };
 		FABB07B31C747053008CAB48 /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABB07B21C747053008CAB48 /* Alert.storyboard */; };
 		FABB07B51C74708C008CAB48 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB07B41C74708C008CAB48 /* AlertViewController.swift */; };
+		FAC8C55D1CBE915D001DE947 /* Pager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC8C55B1CBE915D001DE947 /* Pager.storyboard */; };
+		FAC8C55E1CBE915D001DE947 /* PagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8C55C1CBE915D001DE947 /* PagerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +37,6 @@
 /* Begin PBXFileReference section */
 		FA0BF5E71C81590700A06ED6 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		FA0BF5E91C81591500A06ED6 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
-		FA0BF5EB1C815A3700A06ED6 /* PagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PagerViewController.swift; path = ../PagerViewController.swift; sourceTree = "<group>"; };
-		FA0BF5ED1C815A7F00A06ED6 /* Pager.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Pager.storyboard; path = ../Pager.storyboard; sourceTree = "<group>"; };
 		FA0E1AE11C75650000CD7ADF /* Notification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
 		FA0E1AE31C75652100CD7ADF /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		FABB078B1C746945008CAB48 /* iOSLearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSLearning.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +52,8 @@
 		FABB07B01C746C68008CAB48 /* Example.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
 		FABB07B21C747053008CAB48 /* Alert.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
 		FABB07B41C74708C008CAB48 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		FAC8C55B1CBE915D001DE947 /* Pager.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Pager.storyboard; sourceTree = "<group>"; };
+		FAC8C55C1CBE915D001DE947 /* PagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +79,8 @@
 		FA0BF5F21C815FD600A06ED6 /* Pager */ = {
 			isa = PBXGroup;
 			children = (
-				FA0BF5ED1C815A7F00A06ED6 /* Pager.storyboard */,
-				FA0BF5EB1C815A3700A06ED6 /* PagerViewController.swift */,
+				FAC8C55B1CBE915D001DE947 /* Pager.storyboard */,
+				FAC8C55C1CBE915D001DE947 /* PagerViewController.swift */,
 			);
 			name = Pager;
 			sourceTree = "<group>";
@@ -106,8 +106,7 @@
 		FABB07821C746945008CAB48 = {
 			isa = PBXGroup;
 			children = (
-				FA0BF5E91C81591500A06ED6 /* RxSwift.framework */,
-				FA0BF5E71C81590700A06ED6 /* RxCocoa.framework */,
+				FAC8C55A1CBE912A001DE947 /* Carthage */,
 				FABB078D1C746945008CAB48 /* iOSLearning */,
 				FABB07A41C746945008CAB48 /* iOSLearningTests */,
 				FABB078C1C746945008CAB48 /* Products */,
@@ -147,6 +146,15 @@
 				FABB07A71C746945008CAB48 /* Info.plist */,
 			);
 			path = iOSLearningTests;
+			sourceTree = "<group>";
+		};
+		FAC8C55A1CBE912A001DE947 /* Carthage */ = {
+			isa = PBXGroup;
+			children = (
+				FA0BF5E91C81591500A06ED6 /* RxSwift.framework */,
+				FA0BF5E71C81590700A06ED6 /* RxCocoa.framework */,
+			);
+			name = Carthage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,12 +239,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAC8C55D1CBE915D001DE947 /* Pager.storyboard in Resources */,
 				FABB079B1C746945008CAB48 /* LaunchScreen.storyboard in Resources */,
 				FABB07981C746945008CAB48 /* Assets.xcassets in Resources */,
 				FABB07961C746945008CAB48 /* Main.storyboard in Resources */,
 				FABB07B31C747053008CAB48 /* Alert.storyboard in Resources */,
 				FA0E1AE21C75650000CD7ADF /* Notification.storyboard in Resources */,
-				FA0BF5EE1C815A7F00A06ED6 /* Pager.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA0BF5EC1C815A3700A06ED6 /* PagerViewController.swift in Sources */,
+				FAC8C55E1CBE915D001DE947 /* PagerViewController.swift in Sources */,
 				FA0E1AE41C75652100CD7ADF /* NotificationViewController.swift in Sources */,
 				FABB07B11C746C68008CAB48 /* Example.swift in Sources */,
 				FABB07911C746945008CAB48 /* MasterViewController.swift in Sources */,
