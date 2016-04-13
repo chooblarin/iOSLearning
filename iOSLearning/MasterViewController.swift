@@ -13,6 +13,7 @@ class MasterViewController: UITableViewController {
         examples.append(.Alert)
         examples.append(.Notification)
         examples.append(.Pager)
+        examples.append(.Navigation)
     }
 
     // MARK: - Table View
