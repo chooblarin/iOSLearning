@@ -13,7 +13,7 @@ class MasterViewController: UITableViewController {
         examples.append(.Alert)
         examples.append(.Notification)
         examples.append(.Pager)
-        examples.append(.Navigation)
+        examples.append(.Transition)
     }
 
     // MARK: - Table View
@@ -42,6 +42,6 @@ class MasterViewController: UITableViewController {
     private func open(example: Example) {
         let storyBoard = UIStoryboard(name: example.toString(), bundle: nil)
         let viewController = storyBoard.instantiateInitialViewController()!
-        presentViewController(viewController, animated: true, completion: nil)
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

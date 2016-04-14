@@ -77,8 +77,4 @@ class AlertViewController: UIViewController {
 
         presentViewController(alertController, animated: true, completion: nil)
     }
-
-    @IBAction func dismiss(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
 }

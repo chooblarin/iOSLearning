@@ -53,10 +53,6 @@ class NotificationViewController: UIViewController {
         UIApplication.sharedApplication().registerForRemoteNotifications()
     }
 
-    @IBAction func dismiss(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-
     func registerNotification() {
         let acceptAction = UIMutableUserNotificationAction()
         acceptAction.identifier = "ACCEPT_IDENTIFIER"

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ATh-zW-1DC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Le3-yx-Scr">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--Alert View Controller-->
@@ -17,35 +17,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTR-dd-pMK">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTR-dd-pMK">
                                 <rect key="frame" x="264" y="204" width="72" height="30"/>
                                 <state key="normal" title="Hello Alert"/>
                                 <connections>
                                     <action selector="helloAlert:" destination="Le3-yx-Scr" eventType="touchUpInside" id="QBT-Co-2K3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kdS-te-oaU">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kdS-te-oaU">
                                 <rect key="frame" x="225" y="288" width="150" height="30"/>
                                 <state key="normal" title="Multiple Action Alert 1"/>
                                 <connections>
                                     <action selector="multipleActionAlert1:" destination="Le3-yx-Scr" eventType="touchUpInside" id="UnD-qL-dIo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljH-aW-qxI">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljH-aW-qxI">
                                 <rect key="frame" x="224" y="330" width="152" height="30"/>
                                 <state key="normal" title="Multiple Action Alert 2"/>
                                 <connections>
                                     <action selector="multipleActionAlert2:" destination="Le3-yx-Scr" eventType="touchUpInside" id="0WP-XO-3Td"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETE-UR-SX3">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETE-UR-SX3">
                                 <rect key="frame" x="243" y="372" width="114" height="30"/>
                                 <state key="normal" title="Hello Input Form"/>
                                 <connections>
                                     <action selector="helloInputForm:" destination="Le3-yx-Scr" eventType="touchUpInside" id="IR4-bF-8g9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUN-2f-Rkl">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUN-2f-Rkl">
                                 <rect key="frame" x="239" y="246" width="123" height="30"/>
                                 <state key="normal" title="Hello ActionSheet"/>
                                 <connections>
@@ -67,35 +67,11 @@
                             <constraint firstItem="PTR-dd-pMK" firstAttribute="centerX" secondItem="feq-8q-iN8" secondAttribute="centerX" id="sMr-bE-yci"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="4pE-Kh-Vj4">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="A76-dY-egB">
-                            <connections>
-                                <action selector="dismiss:" destination="Le3-yx-Scr" id="rrg-Vu-uC6"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="4pE-Kh-Vj4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uHe-V1-2T4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1131" y="442"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="w3l-vZ-YSu">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ATh-zW-1DC" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uTM-YH-N7i">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Le3-yx-Scr" kind="relationship" relationship="rootViewController" id="w3n-eu-dGQ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="syo-PT-bNd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="319" y="442"/>
+            <point key="canvasLocation" x="645" y="378"/>
         </scene>
     </scenes>
 </document>

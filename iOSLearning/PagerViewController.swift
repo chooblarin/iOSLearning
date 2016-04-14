@@ -19,12 +19,6 @@ class PagerViewController: UIPageViewController {
             storyboard.instantiateViewControllerWithIdentifier("BlueViewController")
         ]
     }()
-
-    // MARK: -- IBActions
-
-    @IBAction func dismiss(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
 }
 
 // MARK: -- UIPageViewControllerDataSource
