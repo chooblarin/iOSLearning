@@ -13,6 +13,9 @@
 		FA0E1AE41C75652100CD7ADF /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E1AE31C75652100CD7ADF /* NotificationViewController.swift */; };
 		FAB166571CBF23FC0040CE71 /* TransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB166561CBF23FC0040CE71 /* TransitionViewController.swift */; };
 		FAB166591CBF24040040CE71 /* Transition.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB166581CBF24040040CE71 /* Transition.storyboard */; };
+		FAB21E0B1CC901EC0081A2DF /* Collection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB21E0A1CC901EC0081A2DF /* Collection.storyboard */; };
+		FAB21E0D1CC902110081A2DF /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB21E0C1CC902110081A2DF /* CollectionViewController.swift */; };
+		FAB21E0F1CC902880081A2DF /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB21E0E1CC902880081A2DF /* CollectionViewCell.swift */; };
 		FABB078F1C746945008CAB48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB078E1C746945008CAB48 /* AppDelegate.swift */; };
 		FABB07911C746945008CAB48 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB07901C746945008CAB48 /* MasterViewController.swift */; };
 		FABB07961C746945008CAB48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABB07941C746945008CAB48 /* Main.storyboard */; };
@@ -43,6 +46,9 @@
 		FA0E1AE31C75652100CD7ADF /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		FAB166561CBF23FC0040CE71 /* TransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionViewController.swift; sourceTree = "<group>"; };
 		FAB166581CBF24040040CE71 /* Transition.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Transition.storyboard; sourceTree = "<group>"; };
+		FAB21E0A1CC901EC0081A2DF /* Collection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Collection.storyboard; sourceTree = "<group>"; };
+		FAB21E0C1CC902110081A2DF /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		FAB21E0E1CC902880081A2DF /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		FABB078B1C746945008CAB48 /* iOSLearning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSLearning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABB078E1C746945008CAB48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FABB07901C746945008CAB48 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +122,16 @@
 			name = Transition;
 			sourceTree = "<group>";
 		};
+		FAB21E101CC909BC0081A2DF /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				FAB21E0A1CC901EC0081A2DF /* Collection.storyboard */,
+				FAB21E0C1CC902110081A2DF /* CollectionViewController.swift */,
+				FAB21E0E1CC902880081A2DF /* CollectionViewCell.swift */,
+			);
+			name = Collection;
+			sourceTree = "<group>";
+		};
 		FABB07821C746945008CAB48 = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +156,7 @@
 			children = (
 				FABB078E1C746945008CAB48 /* AppDelegate.swift */,
 				FABB07901C746945008CAB48 /* MasterViewController.swift */,
+				FAB21E101CC909BC0081A2DF /* Collection */,
 				FA0E1AE01C75615F00CD7ADF /* Alert */,
 				FA0E1AE51C75653800CD7ADF /* Notification */,
 				FA0BF5F21C815FD600A06ED6 /* Pager */,
@@ -253,6 +270,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAB21E0B1CC901EC0081A2DF /* Collection.storyboard in Resources */,
 				FAC8C55D1CBE915D001DE947 /* Pager.storyboard in Resources */,
 				FABB079B1C746945008CAB48 /* LaunchScreen.storyboard in Resources */,
 				FABB07981C746945008CAB48 /* Assets.xcassets in Resources */,
@@ -297,8 +315,10 @@
 			files = (
 				FAC8C55E1CBE915D001DE947 /* PagerViewController.swift in Sources */,
 				FA0E1AE41C75652100CD7ADF /* NotificationViewController.swift in Sources */,
+				FAB21E0F1CC902880081A2DF /* CollectionViewCell.swift in Sources */,
 				FABB07B11C746C68008CAB48 /* Example.swift in Sources */,
 				FABB07911C746945008CAB48 /* MasterViewController.swift in Sources */,
+				FAB21E0D1CC902110081A2DF /* CollectionViewController.swift in Sources */,
 				FABB078F1C746945008CAB48 /* AppDelegate.swift in Sources */,
 				FAB166571CBF23FC0040CE71 /* TransitionViewController.swift in Sources */,
 				FABB07B51C74708C008CAB48 /* AlertViewController.swift in Sources */,

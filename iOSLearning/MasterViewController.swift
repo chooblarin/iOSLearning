@@ -14,6 +14,7 @@ class MasterViewController: UITableViewController {
         examples.append(.Notification)
         examples.append(.Pager)
         examples.append(.Transition)
+        examples.append(.Collection)
     }
 
     // MARK: - Table View

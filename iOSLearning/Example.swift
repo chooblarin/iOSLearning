@@ -5,6 +5,7 @@ enum Example {
     case Notification
     case Pager
     case Transition
+    case Collection
 
     func toString() -> String {
         switch self {
@@ -12,6 +13,7 @@ enum Example {
         case .Notification: return "Notification"
         case .Pager: return "Pager"
         case .Transition: return "Transition"
+        case .Collection: return "Collection"
         }
     }
 }
