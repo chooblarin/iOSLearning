@@ -11,6 +11,8 @@ private let sectionInsets = UIEdgeInsets(top: inset,
 class CollectionViewController: UICollectionViewController {
 
     // MARK: - Properties
+    var refreshControl: UIRefreshControl!
+
     var items:[Int] = [] {
         didSet {
             collectionView?.reloadData()
@@ -20,6 +22,9 @@ class CollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(CollectionViewController.reloadData), forControlEvents: .ValueChanged)
+        collectionView?.addSubview(refreshControl)
 
         Observable.range(start: 0, count: 20)
             .subscribeNext { [weak self] num in
@@ -34,6 +39,11 @@ class CollectionViewController: UICollectionViewController {
         // self.collectionView!.registerClass(CollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
+    }
+
+    func reloadData() {
+        items = items.shuffle()
+        refreshControl.endRefreshing()
     }
 
     // MARK: UICollectionViewDataSource
@@ -80,5 +90,30 @@ extension CollectionViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         return sectionInsets
+    }
+}
+
+// ===
+
+extension CollectionType {
+    /// Return a copy of `self` with its elements shuffled
+    func shuffle() -> [Generator.Element] {
+        var list = Array(self)
+        list.shuffleInPlace()
+        return list
+    }
+}
+
+extension MutableCollectionType where Index == Int {
+    /// Shuffle the elements of `self` in-place.
+    mutating func shuffleInPlace() {
+        // empty and single-element collections don't shuffle
+        if count < 2 { return }
+        
+        for i in 0..<count - 1 {
+            let j = Int(arc4random_uniform(UInt32(count - i))) + i
+            guard i != j else { continue }
+            swap(&self[i], &self[j])
+        }
     }
 }
