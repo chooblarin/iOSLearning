@@ -2,6 +2,11 @@ import UIKit
 import RxSwift
 
 private let reuseIdentifier = "Cell"
+private let inset: CGFloat = 10.0
+private let sectionInsets = UIEdgeInsets(top: inset,
+                                         left: inset,
+                                         bottom: inset,
+                                         right: inset)
 
 class CollectionViewController: UICollectionViewController {
 
@@ -49,33 +54,31 @@ class CollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDelegate
 
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(collectionView: UICollectionView, shouldHighlightItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    */
+    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let num = items[indexPath.row]
 
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
+        let action = UIAlertAction(title: "Cool!", style: .Default, handler: nil)
+        let alertController = UIAlertController(title: "You Tapped", message: "This is No.\(num)", preferredStyle: .Alert)
+        alertController.addAction(action)
+        presentViewController(alertController, animated: true, completion: nil)
     }
-    */
+}
 
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(collectionView: UICollectionView, shouldShowMenuForItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return false
+// MARK: - UICollectionViewDelegateFlowLayout
+
+extension CollectionViewController: UICollectionViewDelegateFlowLayout {
+
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let size: CGFloat
+        if 0 == indexPath.row {
+            size = self.view.bounds.width - (2 * inset)
+        } else {
+            size = self.view.bounds.width / 2 - inset
+        }
+        return CGSize(width: size, height: size)
     }
 
-    override func collectionView(collectionView: UICollectionView, canPerformAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) -> Bool {
-        return false
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        return sectionInsets
     }
-
-    override func collectionView(collectionView: UICollectionView, performAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) {
-    
-    }
-    */
-
 }
