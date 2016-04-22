@@ -29,16 +29,25 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LJ4-O0-fC4">
                                             <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
                                         </imageView>
+                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zZ3-W7-TjZ" userLabel="Cover View">
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="0.29999999999999999" colorSpace="calibratedWhite"/>
+                                        </view>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
                                     <constraint firstItem="LJ4-O0-fC4" firstAttribute="leading" secondItem="6U7-aj-6ca" secondAttribute="leading" id="2EK-G1-RJR"/>
+                                    <constraint firstItem="zZ3-W7-TjZ" firstAttribute="top" secondItem="6U7-aj-6ca" secondAttribute="top" id="8FC-ea-0LV"/>
+                                    <constraint firstAttribute="trailing" secondItem="zZ3-W7-TjZ" secondAttribute="trailing" id="OGG-Jt-lyA"/>
                                     <constraint firstAttribute="bottom" secondItem="LJ4-O0-fC4" secondAttribute="bottom" id="PMw-Z1-RsC"/>
+                                    <constraint firstAttribute="bottom" secondItem="zZ3-W7-TjZ" secondAttribute="bottom" id="PSc-RH-LZ4"/>
                                     <constraint firstItem="LJ4-O0-fC4" firstAttribute="top" secondItem="6U7-aj-6ca" secondAttribute="top" id="gyW-Q2-Ycu"/>
                                     <constraint firstAttribute="trailing" secondItem="LJ4-O0-fC4" secondAttribute="trailing" id="kQn-Xm-KOi"/>
+                                    <constraint firstItem="zZ3-W7-TjZ" firstAttribute="leading" secondItem="6U7-aj-6ca" secondAttribute="leading" id="lSp-CM-28g"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="coverView" destination="zZ3-W7-TjZ" id="uRh-ej-5od"/>
                                     <outlet property="photoImageView" destination="LJ4-O0-fC4" id="wEz-au-nmj"/>
                                 </connections>
                             </collectionViewCell>

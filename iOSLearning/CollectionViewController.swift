@@ -32,13 +32,8 @@ class CollectionViewController: UICollectionViewController {
             }
             .addDisposableTo(disposeBag)
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        // self.collectionView!.registerClass(CollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+        // to preserve selection between presentations
+        self.clearsSelectionOnViewWillAppear = false
     }
 
     func reloadData() {
@@ -60,6 +55,16 @@ class CollectionViewController: UICollectionViewController {
         let image = UIImage(named: imageName)
         cell.photoImageView.image = image
         return cell
+    }
+
+    override func collectionView(collectionView: UICollectionView, didHighlightItemAtIndexPath indexPath: NSIndexPath) {
+        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! CollectionViewCell
+        cell.coverView.hidden = false
+    }
+
+    override func collectionView(collectionView: UICollectionView, didUnhighlightItemAtIndexPath indexPath: NSIndexPath) {
+        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! CollectionViewCell
+        cell.coverView.hidden = true
     }
 
     // MARK: UICollectionViewDelegate
