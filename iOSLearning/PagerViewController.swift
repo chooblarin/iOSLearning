@@ -19,6 +19,10 @@ class PagerViewController: UIViewController {
         let rvc = storyboard.instantiateViewControllerWithIdentifier("RedViewController")
         let gvc = storyboard.instantiateViewControllerWithIdentifier("GreenViewController")
         let bvc = storyboard.instantiateViewControllerWithIdentifier("BlueViewController")
-        return [(rvc, "Red"), (gvc, "Green"), (bvc, "Blue")]
+        let rvc2 = storyboard.instantiateViewControllerWithIdentifier("RedViewController")
+        let gvc2 = storyboard.instantiateViewControllerWithIdentifier("GreenViewController")
+        let bvc2 = storyboard.instantiateViewControllerWithIdentifier("BlueViewController")
+        return [(rvc, "Red"), (gvc, "Green"), (bvc, "Blue"),
+        (rvc2, "Red"), (gvc2, "Greeeeeeeeen"), (bvc2, "Blue")]
     }
 }

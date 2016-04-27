@@ -71,4 +71,8 @@ class TabMenuCollectionViewCell: UICollectionViewCell {
     class func cellIdentifier() -> String {
         return "TabMenuCollectionViewCell"
     }
+
+    @IBAction func tappedTabMenuItem(sender: UIButton) {
+        tabMenuItemPressedBlock?()
+    }
 }
