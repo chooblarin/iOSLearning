@@ -25,6 +25,13 @@
 		FABB07B11C746C68008CAB48 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB07B01C746C68008CAB48 /* Example.swift */; };
 		FABB07B31C747053008CAB48 /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABB07B21C747053008CAB48 /* Alert.storyboard */; };
 		FABB07B51C74708C008CAB48 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB07B41C74708C008CAB48 /* AlertViewController.swift */; };
+		FAC8739E1CD075A800DB3BE2 /* TabMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8739D1CD075A800DB3BE2 /* TabMenuView.swift */; };
+		FAC873A01CD078BB00DB3BE2 /* TabMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC8739F1CD078BB00DB3BE2 /* TabMenuView.xib */; };
+		FAC873A21CD07D3400DB3BE2 /* TabMenuCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC873A11CD07D3400DB3BE2 /* TabMenuCollectionViewCell.xib */; };
+		FAC873A41CD07D5B00DB3BE2 /* TabMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC873A31CD07D5B00DB3BE2 /* TabMenuCollectionViewCell.swift */; };
+		FAC873A61CD0808A00DB3BE2 /* TabMenuItemOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC873A51CD0808A00DB3BE2 /* TabMenuItemOption.swift */; };
+		FAC873A81CD0AB4500DB3BE2 /* TabPagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC873A71CD0AB4500DB3BE2 /* TabPagerViewController.swift */; };
+		FAC873AA1CD0ABDE00DB3BE2 /* TabPager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC873A91CD0ABDE00DB3BE2 /* TabPager.storyboard */; };
 		FAC8C55D1CBE915D001DE947 /* Pager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC8C55B1CBE915D001DE947 /* Pager.storyboard */; };
 		FAC8C55E1CBE915D001DE947 /* PagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8C55C1CBE915D001DE947 /* PagerViewController.swift */; };
 /* End PBXBuildFile section */
@@ -62,6 +69,13 @@
 		FABB07B01C746C68008CAB48 /* Example.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
 		FABB07B21C747053008CAB48 /* Alert.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
 		FABB07B41C74708C008CAB48 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		FAC8739D1CD075A800DB3BE2 /* TabMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabMenuView.swift; sourceTree = "<group>"; };
+		FAC8739F1CD078BB00DB3BE2 /* TabMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabMenuView.xib; sourceTree = "<group>"; };
+		FAC873A11CD07D3400DB3BE2 /* TabMenuCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabMenuCollectionViewCell.xib; sourceTree = "<group>"; };
+		FAC873A31CD07D5B00DB3BE2 /* TabMenuCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabMenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		FAC873A51CD0808A00DB3BE2 /* TabMenuItemOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabMenuItemOption.swift; sourceTree = "<group>"; };
+		FAC873A71CD0AB4500DB3BE2 /* TabPagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabPagerViewController.swift; sourceTree = "<group>"; };
+		FAC873A91CD0ABDE00DB3BE2 /* TabPager.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabPager.storyboard; sourceTree = "<group>"; };
 		FAC8C55B1CBE915D001DE947 /* Pager.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Pager.storyboard; sourceTree = "<group>"; };
 		FAC8C55C1CBE915D001DE947 /* PagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +105,13 @@
 			children = (
 				FAC8C55B1CBE915D001DE947 /* Pager.storyboard */,
 				FAC8C55C1CBE915D001DE947 /* PagerViewController.swift */,
+				FAC873A91CD0ABDE00DB3BE2 /* TabPager.storyboard */,
+				FAC873A71CD0AB4500DB3BE2 /* TabPagerViewController.swift */,
+				FAC8739D1CD075A800DB3BE2 /* TabMenuView.swift */,
+				FAC873A11CD07D3400DB3BE2 /* TabMenuCollectionViewCell.xib */,
+				FAC873A31CD07D5B00DB3BE2 /* TabMenuCollectionViewCell.swift */,
+				FAC8739F1CD078BB00DB3BE2 /* TabMenuView.xib */,
+				FAC873A51CD0808A00DB3BE2 /* TabMenuItemOption.swift */,
 			);
 			name = Pager;
 			sourceTree = "<group>";
@@ -271,7 +292,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAB21E0B1CC901EC0081A2DF /* Collection.storyboard in Resources */,
+				FAC873AA1CD0ABDE00DB3BE2 /* TabPager.storyboard in Resources */,
 				FAC8C55D1CBE915D001DE947 /* Pager.storyboard in Resources */,
+				FAC873A21CD07D3400DB3BE2 /* TabMenuCollectionViewCell.xib in Resources */,
+				FAC873A01CD078BB00DB3BE2 /* TabMenuView.xib in Resources */,
 				FABB079B1C746945008CAB48 /* LaunchScreen.storyboard in Resources */,
 				FABB07981C746945008CAB48 /* Assets.xcassets in Resources */,
 				FAB166591CBF24040040CE71 /* Transition.storyboard in Resources */,
@@ -313,12 +337,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAC8739E1CD075A800DB3BE2 /* TabMenuView.swift in Sources */,
 				FAC8C55E1CBE915D001DE947 /* PagerViewController.swift in Sources */,
+				FAC873A61CD0808A00DB3BE2 /* TabMenuItemOption.swift in Sources */,
+				FAC873A41CD07D5B00DB3BE2 /* TabMenuCollectionViewCell.swift in Sources */,
 				FA0E1AE41C75652100CD7ADF /* NotificationViewController.swift in Sources */,
 				FAB21E0F1CC902880081A2DF /* CollectionViewCell.swift in Sources */,
 				FABB07B11C746C68008CAB48 /* Example.swift in Sources */,
 				FABB07911C746945008CAB48 /* MasterViewController.swift in Sources */,
 				FAB21E0D1CC902110081A2DF /* CollectionViewController.swift in Sources */,
+				FAC873A81CD0AB4500DB3BE2 /* TabPagerViewController.swift in Sources */,
 				FABB078F1C746945008CAB48 /* AppDelegate.swift in Sources */,
 				FAB166571CBF23FC0040CE71 /* TransitionViewController.swift in Sources */,
 				FABB07B51C74708C008CAB48 /* AlertViewController.swift in Sources */,
