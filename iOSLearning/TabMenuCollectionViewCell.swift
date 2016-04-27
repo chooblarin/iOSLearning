@@ -4,6 +4,7 @@ class TabMenuCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Properties
 
+    var tabMenuItemPressedBlock: (Void -> Void)?
     var option = TabMenuItemOption()
     var item: String = "" {
         didSet {

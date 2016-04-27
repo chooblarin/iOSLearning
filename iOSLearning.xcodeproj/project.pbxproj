@@ -107,10 +107,10 @@
 				FAC8C55C1CBE915D001DE947 /* PagerViewController.swift */,
 				FAC873A91CD0ABDE00DB3BE2 /* TabPager.storyboard */,
 				FAC873A71CD0AB4500DB3BE2 /* TabPagerViewController.swift */,
+				FAC8739F1CD078BB00DB3BE2 /* TabMenuView.xib */,
 				FAC8739D1CD075A800DB3BE2 /* TabMenuView.swift */,
 				FAC873A11CD07D3400DB3BE2 /* TabMenuCollectionViewCell.xib */,
 				FAC873A31CD07D5B00DB3BE2 /* TabMenuCollectionViewCell.swift */,
-				FAC8739F1CD078BB00DB3BE2 /* TabMenuView.xib */,
 				FAC873A51CD0808A00DB3BE2 /* TabMenuItemOption.swift */,
 			);
 			name = Pager;
