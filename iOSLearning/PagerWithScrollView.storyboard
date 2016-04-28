@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WIX-UR-mOr">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Pager With Scroll View View Controller-->
+        <scene sceneID="N2s-3k-Abq">
+            <objects>
+                <viewController id="WIX-UR-mOr" customClass="PagerWithScrollViewViewController" customModule="iOSLearning" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QjH-Nd-ee3"/>
+                        <viewControllerLayoutGuide type="bottom" id="paF-FK-wg4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nf9-EX-Xl1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqG-SF-Gpf">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <connections>
+                                    <outlet property="delegate" destination="WIX-UR-mOr" id="eVT-sX-eTT"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="paF-FK-wg4" firstAttribute="top" secondItem="nqG-SF-Gpf" secondAttribute="bottom" id="2v2-RY-RzA"/>
+                            <constraint firstItem="nqG-SF-Gpf" firstAttribute="top" secondItem="QjH-Nd-ee3" secondAttribute="bottom" id="5mZ-g1-saz"/>
+                            <constraint firstItem="nqG-SF-Gpf" firstAttribute="leading" secondItem="nf9-EX-Xl1" secondAttribute="leading" id="MJ3-v8-ewW"/>
+                            <constraint firstAttribute="trailing" secondItem="nqG-SF-Gpf" secondAttribute="trailing" id="r0s-4u-cKk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="nqG-SF-Gpf" id="Uyd-aG-6gw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T1N-8j-hUP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-152" y="185"/>
+        </scene>
+    </scenes>
+</document>

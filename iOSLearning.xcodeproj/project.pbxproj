@@ -32,6 +32,8 @@
 		FAC873A61CD0808A00DB3BE2 /* TabMenuItemOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC873A51CD0808A00DB3BE2 /* TabMenuItemOption.swift */; };
 		FAC873A81CD0AB4500DB3BE2 /* TabPagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC873A71CD0AB4500DB3BE2 /* TabPagerViewController.swift */; };
 		FAC873AA1CD0ABDE00DB3BE2 /* TabPager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC873A91CD0ABDE00DB3BE2 /* TabPager.storyboard */; };
+		FAC873AC1CD18FBE00DB3BE2 /* PagerWithScrollView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC873AB1CD18FBE00DB3BE2 /* PagerWithScrollView.storyboard */; };
+		FAC873AE1CD18FE800DB3BE2 /* PagerWithScrollViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC873AD1CD18FE800DB3BE2 /* PagerWithScrollViewViewController.swift */; };
 		FAC8C55D1CBE915D001DE947 /* Pager.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC8C55B1CBE915D001DE947 /* Pager.storyboard */; };
 		FAC8C55E1CBE915D001DE947 /* PagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8C55C1CBE915D001DE947 /* PagerViewController.swift */; };
 /* End PBXBuildFile section */
@@ -76,6 +78,8 @@
 		FAC873A51CD0808A00DB3BE2 /* TabMenuItemOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabMenuItemOption.swift; sourceTree = "<group>"; };
 		FAC873A71CD0AB4500DB3BE2 /* TabPagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabPagerViewController.swift; sourceTree = "<group>"; };
 		FAC873A91CD0ABDE00DB3BE2 /* TabPager.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabPager.storyboard; sourceTree = "<group>"; };
+		FAC873AB1CD18FBE00DB3BE2 /* PagerWithScrollView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PagerWithScrollView.storyboard; sourceTree = "<group>"; };
+		FAC873AD1CD18FE800DB3BE2 /* PagerWithScrollViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerWithScrollViewViewController.swift; sourceTree = "<group>"; };
 		FAC8C55B1CBE915D001DE947 /* Pager.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Pager.storyboard; sourceTree = "<group>"; };
 		FAC8C55C1CBE915D001DE947 /* PagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -187,6 +191,8 @@
 				FABB07971C746945008CAB48 /* Assets.xcassets */,
 				FABB07991C746945008CAB48 /* LaunchScreen.storyboard */,
 				FABB079C1C746945008CAB48 /* Info.plist */,
+				FAC873AB1CD18FBE00DB3BE2 /* PagerWithScrollView.storyboard */,
+				FAC873AD1CD18FE800DB3BE2 /* PagerWithScrollViewViewController.swift */,
 			);
 			path = iOSLearning;
 			sourceTree = "<group>";
@@ -293,6 +299,7 @@
 			files = (
 				FAB21E0B1CC901EC0081A2DF /* Collection.storyboard in Resources */,
 				FAC873AA1CD0ABDE00DB3BE2 /* TabPager.storyboard in Resources */,
+				FAC873AC1CD18FBE00DB3BE2 /* PagerWithScrollView.storyboard in Resources */,
 				FAC8C55D1CBE915D001DE947 /* Pager.storyboard in Resources */,
 				FAC873A21CD07D3400DB3BE2 /* TabMenuCollectionViewCell.xib in Resources */,
 				FAC873A01CD078BB00DB3BE2 /* TabMenuView.xib in Resources */,
@@ -349,6 +356,7 @@
 				FAC873A81CD0AB4500DB3BE2 /* TabPagerViewController.swift in Sources */,
 				FABB078F1C746945008CAB48 /* AppDelegate.swift in Sources */,
 				FAB166571CBF23FC0040CE71 /* TransitionViewController.swift in Sources */,
+				FAC873AE1CD18FE800DB3BE2 /* PagerWithScrollViewViewController.swift in Sources */,
 				FABB07B51C74708C008CAB48 /* AlertViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
