@@ -7,8 +7,7 @@ class NotificationViewController: UIViewController {
 
         registerNotification()
 
-        let notificationCenter = NSNotificationCenter.defaultCenter()
-        notificationCenter.addObserver(
+         NSNotificationCenter.defaultCenter().addObserver(
             self,
             selector: #selector(NotificationViewController.handleNotification),
             name: "notification",

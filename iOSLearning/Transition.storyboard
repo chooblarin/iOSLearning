@@ -13,7 +13,7 @@
                         <viewControllerLayoutGuide type="top" id="Lbm-u9-EEx"/>
                         <viewControllerLayoutGuide type="bottom" id="Hu5-YM-pvx"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="JzK-pH-ApC" customClass="I">
+                    <view key="view" contentMode="scaleToFill" id="JzK-pH-ApC" userLabel="View">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -40,6 +40,7 @@
         <!--View Controller-->
         <scene sceneID="oP3-6c-OdN">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7n9-xh-2Xd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="Second" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OdQ-BR-xiX" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8o7-Ef-xvg"/>
@@ -51,7 +52,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7n9-xh-2Xd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1074" y="946"/>
         </scene>
