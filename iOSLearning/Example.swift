@@ -1,21 +1,22 @@
 import Foundation
 
-enum Example {
+enum Example: String {
     case Alert
     case Notification
     case Pager
     case PagerWithScrollView
     case Transition
     case Collection
+    case TabBar
 
-    func toString() -> String {
-        switch self {
-        case .Alert: return "Alert"
-        case .Notification: return "Notification"
-        case .Pager: return "Pager"
-        case .PagerWithScrollView: return "PagerWithScrollView"
-        case .Transition: return "Transition"
-        case .Collection: return "Collection"
-        }
+    static func allValues() -> [Example] {
+        return [
+            .Alert,
+            .Notification,
+            .Pager,
+            .PagerWithScrollView,
+            .Transition,
+            .Collection,
+            .TabBar]
     }
 }

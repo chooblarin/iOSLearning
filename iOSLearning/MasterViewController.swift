@@ -4,18 +4,12 @@ class MasterViewController: UITableViewController {
 
     // MARK: - Properties
 
-    var examples = [Example]()
+    let examples = Example.allValues()
 
     // MARK: - Life cycles
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        examples.append(.Alert)
-        examples.append(.Notification)
-        examples.append(.Pager)
-        examples.append(.PagerWithScrollView)
-        examples.append(.Transition)
-        examples.append(.Collection)
     }
 
     // MARK: - Table View
@@ -32,7 +26,7 @@ class MasterViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
 
         let example = examples[indexPath.row]
-        cell.textLabel!.text = example.toString()
+        cell.textLabel!.text = example.rawValue
         return cell
     }
 
@@ -42,7 +36,7 @@ class MasterViewController: UITableViewController {
     }
 
     private func open(example: Example) {
-        let storyBoard = UIStoryboard(name: example.toString(), bundle: nil)
+        let storyBoard = UIStoryboard(name: example.rawValue, bundle: nil)
         let viewController = storyBoard.instantiateInitialViewController()!
         self.navigationController?.pushViewController(viewController, animated: true)
     }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA02B5941CD310870062003E /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA02B5931CD310870062003E /* TabBar.storyboard */; };
+		FA02B5961CD310AA0062003E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02B5951CD310AA0062003E /* TabBarViewController.swift */; };
 		FA0BF5EF1C815DE200A06ED6 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA0BF5E91C81591500A06ED6 /* RxSwift.framework */; };
 		FA0BF5F01C815DEF00A06ED6 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA0BF5E71C81590700A06ED6 /* RxCocoa.framework */; };
 		FA0E1AE21C75650000CD7ADF /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0E1AE11C75650000CD7ADF /* Notification.storyboard */; };
@@ -49,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA02B5931CD310870062003E /* TabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		FA02B5951CD310AA0062003E /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		FA0BF5E71C81590700A06ED6 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		FA0BF5E91C81591500A06ED6 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		FA0E1AE11C75650000CD7ADF /* Notification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
@@ -104,6 +108,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA02B5921CD3106B0062003E /* PageWithScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				FAC873AB1CD18FBE00DB3BE2 /* PagerWithScrollView.storyboard */,
+				FAC873AD1CD18FE800DB3BE2 /* PagerWithScrollViewViewController.swift */,
+			);
+			name = PageWithScrollView;
+			sourceTree = "<group>";
+		};
+		FA02B5971CD310BD0062003E /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				FA02B5931CD310870062003E /* TabBar.storyboard */,
+				FA02B5951CD310AA0062003E /* TabBarViewController.swift */,
+			);
+			name = TabBar;
+			sourceTree = "<group>";
+		};
 		FA0BF5F21C815FD600A06ED6 /* Pager */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,18 +203,18 @@
 			children = (
 				FABB078E1C746945008CAB48 /* AppDelegate.swift */,
 				FABB07901C746945008CAB48 /* MasterViewController.swift */,
+				FABB07B01C746C68008CAB48 /* Example.swift */,
 				FAB21E101CC909BC0081A2DF /* Collection */,
 				FA0E1AE01C75615F00CD7ADF /* Alert */,
 				FA0E1AE51C75653800CD7ADF /* Notification */,
 				FA0BF5F21C815FD600A06ED6 /* Pager */,
+				FA02B5921CD3106B0062003E /* PageWithScrollView */,
+				FA02B5971CD310BD0062003E /* TabBar */,
 				FAB1665A1CBF240B0040CE71 /* Transition */,
-				FABB07B01C746C68008CAB48 /* Example.swift */,
 				FABB07941C746945008CAB48 /* Main.storyboard */,
 				FABB07971C746945008CAB48 /* Assets.xcassets */,
 				FABB07991C746945008CAB48 /* LaunchScreen.storyboard */,
 				FABB079C1C746945008CAB48 /* Info.plist */,
-				FAC873AB1CD18FBE00DB3BE2 /* PagerWithScrollView.storyboard */,
-				FAC873AD1CD18FE800DB3BE2 /* PagerWithScrollViewViewController.swift */,
 			);
 			path = iOSLearning;
 			sourceTree = "<group>";
@@ -305,6 +327,7 @@
 				FAC873A01CD078BB00DB3BE2 /* TabMenuView.xib in Resources */,
 				FABB079B1C746945008CAB48 /* LaunchScreen.storyboard in Resources */,
 				FABB07981C746945008CAB48 /* Assets.xcassets in Resources */,
+				FA02B5941CD310870062003E /* TabBar.storyboard in Resources */,
 				FAB166591CBF24040040CE71 /* Transition.storyboard in Resources */,
 				FABB07961C746945008CAB48 /* Main.storyboard in Resources */,
 				FABB07B31C747053008CAB48 /* Alert.storyboard in Resources */,
@@ -357,6 +380,7 @@
 				FABB078F1C746945008CAB48 /* AppDelegate.swift in Sources */,
 				FAB166571CBF23FC0040CE71 /* TransitionViewController.swift in Sources */,
 				FAC873AE1CD18FE800DB3BE2 /* PagerWithScrollViewViewController.swift in Sources */,
+				FA02B5961CD310AA0062003E /* TabBarViewController.swift in Sources */,
 				FABB07B51C74708C008CAB48 /* AlertViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
