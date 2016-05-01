@@ -28,6 +28,8 @@
 		FABB07B11C746C68008CAB48 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB07B01C746C68008CAB48 /* Example.swift */; };
 		FABB07B31C747053008CAB48 /* Alert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FABB07B21C747053008CAB48 /* Alert.storyboard */; };
 		FABB07B51C74708C008CAB48 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB07B41C74708C008CAB48 /* AlertViewController.swift */; };
+		FAC1DA781CD6001B00D6A6C1 /* ParallaxImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1DA771CD6001B00D6A6C1 /* ParallaxImageViewController.swift */; };
+		FAC1DA7A1CD6004700D6A6C1 /* ParallaxImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC1DA791CD6004700D6A6C1 /* ParallaxImage.storyboard */; };
 		FAC8739E1CD075A800DB3BE2 /* TabMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC8739D1CD075A800DB3BE2 /* TabMenuView.swift */; };
 		FAC873A01CD078BB00DB3BE2 /* TabMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC8739F1CD078BB00DB3BE2 /* TabMenuView.xib */; };
 		FAC873A21CD07D3400DB3BE2 /* TabMenuCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAC873A11CD07D3400DB3BE2 /* TabMenuCollectionViewCell.xib */; };
@@ -77,6 +79,8 @@
 		FABB07B01C746C68008CAB48 /* Example.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
 		FABB07B21C747053008CAB48 /* Alert.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Alert.storyboard; sourceTree = "<group>"; };
 		FABB07B41C74708C008CAB48 /* AlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		FAC1DA771CD6001B00D6A6C1 /* ParallaxImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxImageViewController.swift; sourceTree = "<group>"; };
+		FAC1DA791CD6004700D6A6C1 /* ParallaxImage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ParallaxImage.storyboard; sourceTree = "<group>"; };
 		FAC8739D1CD075A800DB3BE2 /* TabMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabMenuView.swift; sourceTree = "<group>"; };
 		FAC8739F1CD078BB00DB3BE2 /* TabMenuView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabMenuView.xib; sourceTree = "<group>"; };
 		FAC873A11CD07D3400DB3BE2 /* TabMenuCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabMenuCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -221,6 +225,7 @@
 				FA02B5921CD3106B0062003E /* PageWithScrollView */,
 				FA02B5971CD310BD0062003E /* TabBar */,
 				FAB1665A1CBF240B0040CE71 /* Transition */,
+				FAC1DA7B1CD640CD00D6A6C1 /* ParallaxImage */,
 				FABB07941C746945008CAB48 /* Main.storyboard */,
 				FABB07971C746945008CAB48 /* Assets.xcassets */,
 				FABB07991C746945008CAB48 /* LaunchScreen.storyboard */,
@@ -237,6 +242,15 @@
 				FABB07A71C746945008CAB48 /* Info.plist */,
 			);
 			path = iOSLearningTests;
+			sourceTree = "<group>";
+		};
+		FAC1DA7B1CD640CD00D6A6C1 /* ParallaxImage */ = {
+			isa = PBXGroup;
+			children = (
+				FAC1DA791CD6004700D6A6C1 /* ParallaxImage.storyboard */,
+				FAC1DA771CD6001B00D6A6C1 /* ParallaxImageViewController.swift */,
+			);
+			name = ParallaxImage;
 			sourceTree = "<group>";
 		};
 		FAC8C55A1CBE912A001DE947 /* Carthage */ = {
@@ -335,6 +349,7 @@
 				FAC873AC1CD18FBE00DB3BE2 /* PagerWithScrollView.storyboard in Resources */,
 				FAC8C55D1CBE915D001DE947 /* Pager.storyboard in Resources */,
 				FAC873A21CD07D3400DB3BE2 /* TabMenuCollectionViewCell.xib in Resources */,
+				FAC1DA7A1CD6004700D6A6C1 /* ParallaxImage.storyboard in Resources */,
 				FAC873A01CD078BB00DB3BE2 /* TabMenuView.xib in Resources */,
 				FABB079B1C746945008CAB48 /* LaunchScreen.storyboard in Resources */,
 				FABB07981C746945008CAB48 /* Assets.xcassets in Resources */,
@@ -389,6 +404,7 @@
 				FABB07911C746945008CAB48 /* MasterViewController.swift in Sources */,
 				FAB21E0D1CC902110081A2DF /* CollectionViewController.swift in Sources */,
 				FAC873A81CD0AB4500DB3BE2 /* TabPagerViewController.swift in Sources */,
+				FAC1DA781CD6001B00D6A6C1 /* ParallaxImageViewController.swift in Sources */,
 				FABB078F1C746945008CAB48 /* AppDelegate.swift in Sources */,
 				FAB166571CBF23FC0040CE71 /* TransitionViewController.swift in Sources */,
 				FAC873AE1CD18FE800DB3BE2 /* PagerWithScrollViewViewController.swift in Sources */,

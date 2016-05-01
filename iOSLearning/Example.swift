@@ -8,6 +8,7 @@ enum Example: String {
     case Transition
     case Collection
     case TabBar
+    case ParallaxImage
 
     static func allValues() -> [Example] {
         return [
@@ -17,6 +18,7 @@ enum Example: String {
             .PagerWithScrollView,
             .Transition,
             .Collection,
-            .TabBar]
+            .TabBar,
+            .ParallaxImage]
     }
 }

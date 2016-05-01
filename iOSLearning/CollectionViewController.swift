@@ -11,6 +11,7 @@ private let sectionInsets = UIEdgeInsets(top: inset,
 class CollectionViewController: UICollectionViewController {
 
     // MARK: - Properties
+
     var refreshControl: UIRefreshControl!
 
     var items:[Int] = [] {
