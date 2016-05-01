@@ -3,56 +3,40 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Parallax Image View Controller-->
         <scene sceneID="ImX-Gb-aLh">
             <objects>
                 <tableViewController id="qMI-MU-0F6" customClass="ParallaxImageViewController" customModule="iOSLearning" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="205" sectionHeaderHeight="28" sectionFooterHeight="28" id="zhr-ZG-vMy">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="199" sectionHeaderHeight="28" sectionFooterHeight="28" id="zhr-ZG-vMy">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImageCell" rowHeight="300" id="f3R-eO-vz9" customClass="ImageCell" customModule="iOSLearning" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="300"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImageCell" rowHeight="199" id="f3R-eO-vz9" customClass="ImageCell" customModule="iOSLearning" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="199"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f3R-eO-vz9" id="1Ny-WF-cbN">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="299.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="198.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wit-h0-Y0j" userLabel="Container View">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Mo-ae-Wxf" userLabel="Photo">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="3Mo-ae-Wxf" secondAttribute="height" multiplier="2:1" priority="950" id="CGx-dF-Y2E"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Mo-ae-Wxf" userLabel="Photo">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
                                             <constraints>
-                                                <constraint firstItem="3Mo-ae-Wxf" firstAttribute="leading" secondItem="Wit-h0-Y0j" secondAttribute="leading" priority="950" id="0lh-vy-p02"/>
-                                                <constraint firstAttribute="trailing" secondItem="3Mo-ae-Wxf" secondAttribute="trailing" priority="950" id="1wb-Rd-Jpv"/>
-                                                <constraint firstItem="3Mo-ae-Wxf" firstAttribute="top" secondItem="Wit-h0-Y0j" secondAttribute="top" id="3U4-oh-hMp"/>
-                                                <constraint firstAttribute="bottom" secondItem="3Mo-ae-Wxf" secondAttribute="bottom" id="FCn-kB-E2T"/>
-                                                <constraint firstItem="3Mo-ae-Wxf" firstAttribute="centerX" secondItem="Wit-h0-Y0j" secondAttribute="centerX" id="OeF-z1-A0K"/>
-                                                <constraint firstItem="3Mo-ae-Wxf" firstAttribute="centerY" secondItem="Wit-h0-Y0j" secondAttribute="centerY" id="i2N-vv-5lz"/>
-                                                <constraint firstAttribute="width" secondItem="Wit-h0-Y0j" secondAttribute="height" multiplier="2:1" priority="950" id="kl5-Pq-f70"/>
+                                                <constraint firstAttribute="height" constant="200" id="eDR-Bv-3iW"/>
                                             </constraints>
-                                        </view>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Wit-h0-Y0j" firstAttribute="leading" secondItem="1Ny-WF-cbN" secondAttribute="leading" id="dQE-2x-Opb"/>
-                                        <constraint firstAttribute="bottom" secondItem="Wit-h0-Y0j" secondAttribute="bottom" id="oeu-Tk-Mh2"/>
-                                        <constraint firstItem="Wit-h0-Y0j" firstAttribute="top" secondItem="1Ny-WF-cbN" secondAttribute="top" id="uKV-SV-RUB"/>
-                                        <constraint firstAttribute="trailing" secondItem="Wit-h0-Y0j" secondAttribute="trailing" id="zhY-wd-e1k"/>
+                                        <constraint firstItem="3Mo-ae-Wxf" firstAttribute="leading" secondItem="1Ny-WF-cbN" secondAttribute="leading" id="L8J-bo-Fvj"/>
+                                        <constraint firstAttribute="trailing" secondItem="3Mo-ae-Wxf" secondAttribute="trailing" id="gxh-WP-lXW"/>
+                                        <constraint firstItem="3Mo-ae-Wxf" firstAttribute="top" secondItem="1Ny-WF-cbN" secondAttribute="top" id="nrY-4m-jyo"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="imageCenterYConstraint" destination="i2N-vv-5lz" id="jhh-Ts-0qi"/>
+                                    <outlet property="imageHeightConstraint" destination="eDR-Bv-3iW" id="TVc-RZ-lnQ"/>
+                                    <outlet property="imageTopConstraint" destination="nrY-4m-jyo" id="ODf-Rm-r9v"/>
                                     <outlet property="photoImageView" destination="3Mo-ae-Wxf" id="cXc-0V-2S7"/>
                                 </connections>
                             </tableViewCell>
