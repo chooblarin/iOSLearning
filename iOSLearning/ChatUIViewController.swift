@@ -5,6 +5,7 @@ class ChatUIViewController: UIViewController {
     // IBOutlets
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var textViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var textViewBottomConstraint: NSLayoutConstraint!
 
@@ -27,6 +28,8 @@ class ChatUIViewController: UIViewController {
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+
+        textView.delegate = self
     }
 
     override func viewWillDisappear(animated: Bool) {
@@ -35,6 +38,13 @@ class ChatUIViewController: UIViewController {
 
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+
+    @IBAction func sendMessage(sender: UIButton) {
+        textView.text = ""
+        let size = textView.sizeThatFits(textView.frame.size)
+        textViewHeightConstraint.constant = size.height
+        textView.resignFirstResponder()
     }
 
     func handleKeyboardWillShow(notification: NSNotification) {
@@ -49,5 +59,23 @@ class ChatUIViewController: UIViewController {
     func handleKeyboardWillHide(notification: NSNotification) {
         editorContainerBottomConstraint.constant = 0
         view.layoutIfNeeded()
+    }
+}
+
+// MARK: UITextViewDelegate
+
+extension ChatUIViewController: UITextViewDelegate {
+
+    func textViewDidChange(textView: UITextView) {
+        let maxHeight: CGFloat = 100.0
+        guard textView.frame.size.height < maxHeight else { return }
+
+        let size = textView.sizeThatFits(textView.frame.size)
+        textViewHeightConstraint.constant = size.height
+    }
+
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        textView.scrollRangeToVisible(range)
+        return true
     }
 }

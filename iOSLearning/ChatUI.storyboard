@@ -18,28 +18,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OkZ-7s-NeP">
-                                <rect key="frame" x="0.0" y="20" width="600" height="516"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="524"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sEd-BM-UOE">
-                                <rect key="frame" x="0.0" y="536" width="600" height="64"/>
+                                <rect key="frame" x="0.0" y="544" width="600" height="56"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="siS-GJ-JNY">
-                                        <rect key="frame" x="8" y="8" width="532" height="48"/>
+                                        <rect key="frame" x="8" y="8" width="532" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="48" id="wS4-1d-dZM"/>
+                                            <constraint firstAttribute="height" constant="40" id="wS4-1d-dZM"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ij1-c5-qHp">
-                                        <rect key="frame" x="548" y="24" width="44" height="32"/>
+                                        <rect key="frame" x="548" y="16" width="44" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="1E0-VV-gze"/>
                                             <constraint firstAttribute="height" constant="32" id="wpS-fN-1AA"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Send"/>
+                                        <connections>
+                                            <action selector="sendMessage:" destination="DKo-QH-RPt" eventType="touchUpInside" id="W21-qH-Uyc"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -67,6 +70,7 @@
                     <connections>
                         <outlet property="editorContainerBottomConstraint" destination="0FO-tL-Wz3" id="DdE-Xo-Oz1"/>
                         <outlet property="tableView" destination="OkZ-7s-NeP" id="sYr-cn-6MO"/>
+                        <outlet property="textView" destination="siS-GJ-JNY" id="FND-oc-lQ9"/>
                         <outlet property="textViewBottomConstraint" destination="RTr-Ce-KP6" id="1o9-VG-aJH"/>
                         <outlet property="textViewHeightConstraint" destination="wS4-1d-dZM" id="TSF-h4-r25"/>
                     </connections>
