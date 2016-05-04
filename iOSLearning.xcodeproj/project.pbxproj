@@ -16,6 +16,7 @@
 		FA0E1AE41C75652100CD7ADF /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E1AE31C75652100CD7ADF /* NotificationViewController.swift */; };
 		FA3361351CD8F94200B97B59 /* ChatUI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3361341CD8F94200B97B59 /* ChatUI.storyboard */; };
 		FA3361371CD8F95500B97B59 /* ChatUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3361361CD8F95500B97B59 /* ChatUIViewController.swift */; };
+		FA3361391CD9A0F100B97B59 /* ChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3361381CD9A0F100B97B59 /* ChatMessageCell.swift */; };
 		FAB166571CBF23FC0040CE71 /* TransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB166561CBF23FC0040CE71 /* TransitionViewController.swift */; };
 		FAB166591CBF24040040CE71 /* Transition.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB166581CBF24040040CE71 /* Transition.storyboard */; };
 		FAB21E0B1CC901EC0081A2DF /* Collection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB21E0A1CC901EC0081A2DF /* Collection.storyboard */; };
@@ -65,6 +66,7 @@
 		FA0E1AE31C75652100CD7ADF /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		FA3361341CD8F94200B97B59 /* ChatUI.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChatUI.storyboard; sourceTree = "<group>"; };
 		FA3361361CD8F95500B97B59 /* ChatUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatUIViewController.swift; sourceTree = "<group>"; };
+		FA3361381CD9A0F100B97B59 /* ChatMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageCell.swift; sourceTree = "<group>"; };
 		FAB166561CBF23FC0040CE71 /* TransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionViewController.swift; sourceTree = "<group>"; };
 		FAB166581CBF24040040CE71 /* Transition.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Transition.storyboard; sourceTree = "<group>"; };
 		FAB21E0A1CC901EC0081A2DF /* Collection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Collection.storyboard; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				FA02B59A1CD316690062003E /* Extension */,
 				FA3361341CD8F94200B97B59 /* ChatUI.storyboard */,
 				FA3361361CD8F95500B97B59 /* ChatUIViewController.swift */,
+				FA3361381CD9A0F100B97B59 /* ChatMessageCell.swift */,
 			);
 			path = iOSLearning;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 				FABB078F1C746945008CAB48 /* AppDelegate.swift in Sources */,
 				FAB166571CBF23FC0040CE71 /* TransitionViewController.swift in Sources */,
 				FAC873AE1CD18FE800DB3BE2 /* PagerWithScrollViewViewController.swift in Sources */,
+				FA3361391CD9A0F100B97B59 /* ChatMessageCell.swift in Sources */,
 				FA02B5961CD310AA0062003E /* TabBarViewController.swift in Sources */,
 				FABB07B51C74708C008CAB48 /* AlertViewController.swift in Sources */,
 			);

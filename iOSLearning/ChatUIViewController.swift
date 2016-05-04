@@ -2,13 +2,19 @@ import UIKit
 
 class ChatUIViewController: UIViewController {
 
-    // IBOutlets
+    // MARK: - Properties
+    var messages = [String]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+
+    // MARK: - IBOutlets
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var textViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var textViewBottomConstraint: NSLayoutConstraint!
-
     @IBOutlet weak var editorContainerBottomConstraint: NSLayoutConstraint!
 
     override func viewDidLoad() {
@@ -29,6 +35,7 @@ class ChatUIViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
+        tableView.dataSource = self
         textView.delegate = self
     }
 
@@ -40,7 +47,12 @@ class ChatUIViewController: UIViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 
+    // MARK: - IBActions
+
     @IBAction func sendMessage(sender: UIButton) {
+        if let message = textView.text {
+            messages.append(message)
+        }
         textView.text = ""
         let size = textView.sizeThatFits(textView.frame.size)
         textViewHeightConstraint.constant = size.height
@@ -62,7 +74,24 @@ class ChatUIViewController: UIViewController {
     }
 }
 
-// MARK: UITextViewDelegate
+let cellIdentifier = "ChatMessageCell"
+
+// MARK: - UITableViewDataSource
+
+extension ChatUIViewController: UITableViewDataSource {
+
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return messages.count
+    }
+
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ChatMessageCell
+        cell.messageLabel.text = messages[indexPath.row]
+        return cell
+    }
+}
+
+// MARK: - UITextViewDelegate
 
 extension ChatUIViewController: UITextViewDelegate {
 

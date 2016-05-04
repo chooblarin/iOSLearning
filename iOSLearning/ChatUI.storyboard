@@ -20,6 +20,33 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OkZ-7s-NeP">
                                 <rect key="frame" x="0.0" y="20" width="600" height="524"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatMessageCell" id="P4T-28-mdL" customClass="ChatMessageCell" customModule="iOSLearning" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="P4T-28-mdL" id="seI-0t-Sja">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqm-wB-0Wv">
+                                                    <rect key="frame" x="8" y="8" width="584" height="27.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="cqm-wB-0Wv" secondAttribute="bottom" constant="8" id="9O3-Rl-Dzd"/>
+                                                <constraint firstItem="cqm-wB-0Wv" firstAttribute="leading" secondItem="seI-0t-Sja" secondAttribute="leading" constant="8" id="Zmt-os-beK"/>
+                                                <constraint firstItem="cqm-wB-0Wv" firstAttribute="top" secondItem="seI-0t-Sja" secondAttribute="top" constant="8" id="aI5-IN-kZa"/>
+                                                <constraint firstAttribute="trailing" secondItem="cqm-wB-0Wv" secondAttribute="trailing" constant="8" id="mxY-WK-aIO"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="messageLabel" destination="cqm-wB-0Wv" id="pET-kL-UrG"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sEd-BM-UOE">
                                 <rect key="frame" x="0.0" y="544" width="600" height="56"/>
