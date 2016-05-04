@@ -9,6 +9,7 @@ enum Example: String {
     case Collection
     case TabBar
     case ParallaxImage
+    case ChatUI
 
     static func allValues() -> [Example] {
         return [
@@ -19,6 +20,8 @@ enum Example: String {
             .Transition,
             .Collection,
             .TabBar,
-            .ParallaxImage]
+            .ParallaxImage,
+            .ChatUI
+        ]
     }
 }
