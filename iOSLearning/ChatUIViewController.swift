@@ -3,11 +3,8 @@ import UIKit
 class ChatUIViewController: UIViewController {
 
     // MARK: - Properties
-    var messages = [String]() {
-        didSet {
-            tableView.reloadData()
-        }
-    }
+
+    var messages = [String]()
 
     // MARK: - IBOutlets
 
@@ -37,6 +34,8 @@ class ChatUIViewController: UIViewController {
 
         tableView.dataSource = self
         textView.delegate = self
+
+        // tableView.tableFooterView = UIView(frame: CGRectZero)
     }
 
     override func viewWillDisappear(animated: Bool) {
@@ -45,18 +44,6 @@ class ChatUIViewController: UIViewController {
 
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
-    }
-
-    // MARK: - IBActions
-
-    @IBAction func sendMessage(sender: UIButton) {
-        if let message = textView.text {
-            messages.append(message)
-        }
-        textView.text = ""
-        let size = textView.sizeThatFits(textView.frame.size)
-        textViewHeightConstraint.constant = size.height
-        textView.resignFirstResponder()
     }
 
     func handleKeyboardWillShow(notification: NSNotification) {
@@ -71,6 +58,23 @@ class ChatUIViewController: UIViewController {
     func handleKeyboardWillHide(notification: NSNotification) {
         editorContainerBottomConstraint.constant = 0
         view.layoutIfNeeded()
+    }
+
+    // MARK: - IBActions
+
+    @IBAction func sendMessage(sender: UIButton) {
+        if let message = textView.text {
+            messages.append(message)
+            let indexPath = NSIndexPath(forItem: messages.count - 1, inSection: 0)
+            tableView.beginUpdates()
+            tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Bottom)
+            tableView.endUpdates()
+            tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Bottom, animated: true)
+        }
+        textView.text = ""
+        let size = textView.sizeThatFits(textView.frame.size)
+        textViewHeightConstraint.constant = size.height
+        textView.resignFirstResponder()
     }
 }
 
