@@ -23,6 +23,8 @@
 		FA84099E1CE179B100D33FFC /* PageMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA84099D1CE179B100D33FFC /* PageMenuViewController.swift */; };
 		FA8409A01CE179CA00D33FFC /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA84099F1CE179CA00D33FFC /* DataViewController.swift */; };
 		FA8409A21CE179EC00D33FFC /* PageMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8409A11CE179EC00D33FFC /* PageMenu.storyboard */; };
+		FA8409A81CE1E11000D33FFC /* WithWebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8409A71CE1E11000D33FFC /* WithWebView.storyboard */; };
+		FA8409AA1CE1E12200D33FFC /* WithWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8409A91CE1E12200D33FFC /* WithWebViewViewController.swift */; };
 		FAB166571CBF23FC0040CE71 /* TransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB166561CBF23FC0040CE71 /* TransitionViewController.swift */; };
 		FAB166591CBF24040040CE71 /* Transition.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB166581CBF24040040CE71 /* Transition.storyboard */; };
 		FAB21E0B1CC901EC0081A2DF /* Collection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB21E0A1CC901EC0081A2DF /* Collection.storyboard */; };
@@ -79,6 +81,8 @@
 		FA84099D1CE179B100D33FFC /* PageMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageMenuViewController.swift; sourceTree = "<group>"; };
 		FA84099F1CE179CA00D33FFC /* DataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		FA8409A11CE179EC00D33FFC /* PageMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PageMenu.storyboard; sourceTree = "<group>"; };
+		FA8409A71CE1E11000D33FFC /* WithWebView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WithWebView.storyboard; sourceTree = "<group>"; };
+		FA8409A91CE1E12200D33FFC /* WithWebViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithWebViewViewController.swift; sourceTree = "<group>"; };
 		FAB166561CBF23FC0040CE71 /* TransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionViewController.swift; sourceTree = "<group>"; };
 		FAB166581CBF24040040CE71 /* Transition.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Transition.storyboard; sourceTree = "<group>"; };
 		FAB21E0A1CC901EC0081A2DF /* Collection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Collection.storyboard; sourceTree = "<group>"; };
@@ -205,6 +209,25 @@
 			name = Pager2;
 			sourceTree = "<group>";
 		};
+		FA8409AB1CE1E12900D33FFC /* WithWebView */ = {
+			isa = PBXGroup;
+			children = (
+				FA8409A71CE1E11000D33FFC /* WithWebView.storyboard */,
+				FA8409A91CE1E12200D33FFC /* WithWebViewViewController.swift */,
+			);
+			name = WithWebView;
+			sourceTree = "<group>";
+		};
+		FA8409AC1CE2107100D33FFC /* ChatUI */ = {
+			isa = PBXGroup;
+			children = (
+				FA3361341CD8F94200B97B59 /* ChatUI.storyboard */,
+				FA3361361CD8F95500B97B59 /* ChatUIViewController.swift */,
+				FA3361381CD9A0F100B97B59 /* ChatMessageCell.swift */,
+			);
+			name = ChatUI;
+			sourceTree = "<group>";
+		};
 		FAB1665A1CBF240B0040CE71 /* Transition */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,23 +272,22 @@
 				FABB078E1C746945008CAB48 /* AppDelegate.swift */,
 				FABB07901C746945008CAB48 /* MasterViewController.swift */,
 				FABB07B01C746C68008CAB48 /* Example.swift */,
-				FAB21E101CC909BC0081A2DF /* Collection */,
 				FA0E1AE01C75615F00CD7ADF /* Alert */,
 				FA0E1AE51C75653800CD7ADF /* Notification */,
 				FA0BF5F21C815FD600A06ED6 /* Pager */,
 				FA84099A1CE178C600D33FFC /* Pager2 */,
 				FA02B5921CD3106B0062003E /* PageWithScrollView */,
-				FA02B5971CD310BD0062003E /* TabBar */,
 				FAB1665A1CBF240B0040CE71 /* Transition */,
+				FAB21E101CC909BC0081A2DF /* Collection */,
+				FA02B5971CD310BD0062003E /* TabBar */,
 				FAC1DA7B1CD640CD00D6A6C1 /* ParallaxImage */,
+				FA8409AB1CE1E12900D33FFC /* WithWebView */,
+				FA8409AC1CE2107100D33FFC /* ChatUI */,
 				FABB07941C746945008CAB48 /* Main.storyboard */,
 				FABB07971C746945008CAB48 /* Assets.xcassets */,
 				FABB07991C746945008CAB48 /* LaunchScreen.storyboard */,
 				FABB079C1C746945008CAB48 /* Info.plist */,
 				FA02B59A1CD316690062003E /* Extension */,
-				FA3361341CD8F94200B97B59 /* ChatUI.storyboard */,
-				FA3361361CD8F95500B97B59 /* ChatUIViewController.swift */,
-				FA3361381CD9A0F100B97B59 /* ChatMessageCell.swift */,
 			);
 			path = iOSLearning;
 			sourceTree = "<group>";
@@ -395,6 +417,7 @@
 				FAB166591CBF24040040CE71 /* Transition.storyboard in Resources */,
 				FABB07961C746945008CAB48 /* Main.storyboard in Resources */,
 				FABB07B31C747053008CAB48 /* Alert.storyboard in Resources */,
+				FA8409A81CE1E11000D33FFC /* WithWebView.storyboard in Resources */,
 				FA0E1AE21C75650000CD7ADF /* Notification.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,6 +476,7 @@
 				FAC873AE1CD18FE800DB3BE2 /* PagerWithScrollViewViewController.swift in Sources */,
 				FA3361391CD9A0F100B97B59 /* ChatMessageCell.swift in Sources */,
 				FA02B5961CD310AA0062003E /* TabBarViewController.swift in Sources */,
+				FA8409AA1CE1E12200D33FFC /* WithWebViewViewController.swift in Sources */,
 				FABB07B51C74708C008CAB48 /* AlertViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
