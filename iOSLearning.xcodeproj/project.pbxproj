@@ -17,6 +17,12 @@
 		FA3361351CD8F94200B97B59 /* ChatUI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3361341CD8F94200B97B59 /* ChatUI.storyboard */; };
 		FA3361371CD8F95500B97B59 /* ChatUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3361361CD8F95500B97B59 /* ChatUIViewController.swift */; };
 		FA3361391CD9A0F100B97B59 /* ChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3361381CD9A0F100B97B59 /* ChatMessageCell.swift */; };
+		FA8409971CE1787E00D33FFC /* Pager2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8409961CE1787E00D33FFC /* Pager2.storyboard */; };
+		FA8409991CE178AA00D33FFC /* Pager2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8409981CE178AA00D33FFC /* Pager2ViewController.swift */; };
+		FA84099C1CE1798200D33FFC /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA84099B1CE1798200D33FFC /* MenuView.swift */; };
+		FA84099E1CE179B100D33FFC /* PageMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA84099D1CE179B100D33FFC /* PageMenuViewController.swift */; };
+		FA8409A01CE179CA00D33FFC /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA84099F1CE179CA00D33FFC /* DataViewController.swift */; };
+		FA8409A21CE179EC00D33FFC /* PageMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8409A11CE179EC00D33FFC /* PageMenu.storyboard */; };
 		FAB166571CBF23FC0040CE71 /* TransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB166561CBF23FC0040CE71 /* TransitionViewController.swift */; };
 		FAB166591CBF24040040CE71 /* Transition.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB166581CBF24040040CE71 /* Transition.storyboard */; };
 		FAB21E0B1CC901EC0081A2DF /* Collection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB21E0A1CC901EC0081A2DF /* Collection.storyboard */; };
@@ -67,6 +73,12 @@
 		FA3361341CD8F94200B97B59 /* ChatUI.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChatUI.storyboard; sourceTree = "<group>"; };
 		FA3361361CD8F95500B97B59 /* ChatUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatUIViewController.swift; sourceTree = "<group>"; };
 		FA3361381CD9A0F100B97B59 /* ChatMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageCell.swift; sourceTree = "<group>"; };
+		FA8409961CE1787E00D33FFC /* Pager2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Pager2.storyboard; sourceTree = "<group>"; };
+		FA8409981CE178AA00D33FFC /* Pager2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pager2ViewController.swift; sourceTree = "<group>"; };
+		FA84099B1CE1798200D33FFC /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		FA84099D1CE179B100D33FFC /* PageMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageMenuViewController.swift; sourceTree = "<group>"; };
+		FA84099F1CE179CA00D33FFC /* DataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		FA8409A11CE179EC00D33FFC /* PageMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PageMenu.storyboard; sourceTree = "<group>"; };
 		FAB166561CBF23FC0040CE71 /* TransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionViewController.swift; sourceTree = "<group>"; };
 		FAB166581CBF24040040CE71 /* Transition.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Transition.storyboard; sourceTree = "<group>"; };
 		FAB21E0A1CC901EC0081A2DF /* Collection.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Collection.storyboard; sourceTree = "<group>"; };
@@ -180,6 +192,19 @@
 			name = Notification;
 			sourceTree = "<group>";
 		};
+		FA84099A1CE178C600D33FFC /* Pager2 */ = {
+			isa = PBXGroup;
+			children = (
+				FA8409961CE1787E00D33FFC /* Pager2.storyboard */,
+				FA8409981CE178AA00D33FFC /* Pager2ViewController.swift */,
+				FA84099B1CE1798200D33FFC /* MenuView.swift */,
+				FA84099D1CE179B100D33FFC /* PageMenuViewController.swift */,
+				FA84099F1CE179CA00D33FFC /* DataViewController.swift */,
+				FA8409A11CE179EC00D33FFC /* PageMenu.storyboard */,
+			);
+			name = Pager2;
+			sourceTree = "<group>";
+		};
 		FAB1665A1CBF240B0040CE71 /* Transition */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +253,7 @@
 				FA0E1AE01C75615F00CD7ADF /* Alert */,
 				FA0E1AE51C75653800CD7ADF /* Notification */,
 				FA0BF5F21C815FD600A06ED6 /* Pager */,
+				FA84099A1CE178C600D33FFC /* Pager2 */,
 				FA02B5921CD3106B0062003E /* PageWithScrollView */,
 				FA02B5971CD310BD0062003E /* TabBar */,
 				FAB1665A1CBF240B0040CE71 /* Transition */,
@@ -362,6 +388,8 @@
 				FA3361351CD8F94200B97B59 /* ChatUI.storyboard in Resources */,
 				FAC873A01CD078BB00DB3BE2 /* TabMenuView.xib in Resources */,
 				FABB079B1C746945008CAB48 /* LaunchScreen.storyboard in Resources */,
+				FA8409971CE1787E00D33FFC /* Pager2.storyboard in Resources */,
+				FA8409A21CE179EC00D33FFC /* PageMenu.storyboard in Resources */,
 				FABB07981C746945008CAB48 /* Assets.xcassets in Resources */,
 				FA02B5941CD310870062003E /* TabBar.storyboard in Resources */,
 				FAB166591CBF24040040CE71 /* Transition.storyboard in Resources */,
@@ -407,12 +435,16 @@
 				FAC8C55E1CBE915D001DE947 /* PagerViewController.swift in Sources */,
 				FAC873A61CD0808A00DB3BE2 /* TabMenuItemOption.swift in Sources */,
 				FAC873A41CD07D5B00DB3BE2 /* TabMenuCollectionViewCell.swift in Sources */,
+				FA8409A01CE179CA00D33FFC /* DataViewController.swift in Sources */,
 				FA0E1AE41C75652100CD7ADF /* NotificationViewController.swift in Sources */,
 				FA02B5991CD316150062003E /* UIColor.swift in Sources */,
 				FAB21E0F1CC902880081A2DF /* CollectionViewCell.swift in Sources */,
+				FA84099C1CE1798200D33FFC /* MenuView.swift in Sources */,
 				FABB07B11C746C68008CAB48 /* Example.swift in Sources */,
 				FABB07911C746945008CAB48 /* MasterViewController.swift in Sources */,
+				FA8409991CE178AA00D33FFC /* Pager2ViewController.swift in Sources */,
 				FAB21E0D1CC902110081A2DF /* CollectionViewController.swift in Sources */,
+				FA84099E1CE179B100D33FFC /* PageMenuViewController.swift in Sources */,
 				FAC873A81CD0AB4500DB3BE2 /* TabPagerViewController.swift in Sources */,
 				FAC1DA781CD6001B00D6A6C1 /* ParallaxImageViewController.swift in Sources */,
 				FA3361371CD8F95500B97B59 /* ChatUIViewController.swift in Sources */,

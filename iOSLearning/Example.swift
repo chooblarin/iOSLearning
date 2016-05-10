@@ -4,6 +4,7 @@ enum Example: String {
     case Alert
     case Notification
     case Pager
+    case Pager2
     case PagerWithScrollView
     case Transition
     case Collection
@@ -16,6 +17,7 @@ enum Example: String {
             .Alert,
             .Notification,
             .Pager,
+            .Pager2,
             .PagerWithScrollView,
             .Transition,
             .Collection,
