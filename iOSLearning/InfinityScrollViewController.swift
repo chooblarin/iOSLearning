@@ -13,6 +13,7 @@ class InfinityScrollViewController: UITableViewController {
         }
     }
     let disposeBag = DisposeBag()
+    let scheduler = SerialDispatchQueueScheduler(globalConcurrentQueueQOS: .Background)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,8 @@ class InfinityScrollViewController: UITableViewController {
         (0...20).toObservable()
             .map { String($0) }
             .toArray()
+            .delaySubscription(2.0, scheduler: scheduler)
+            .observeOn(MainScheduler.instance)
             .subscribeNext { [weak self] (items) in
                 self?.items += items
                 self?.isLoading = false
@@ -58,6 +61,7 @@ extension InfinityScrollViewController {
 
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier(LoadingTableViewCell.reusableIdentifier, forIndexPath: indexPath) as! LoadingTableViewCell
+            cell.show()
             return cell
         }
     }
