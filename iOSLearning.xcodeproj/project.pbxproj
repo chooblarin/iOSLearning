@@ -14,6 +14,9 @@
 		FA0BF5F01C815DEF00A06ED6 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA0BF5E71C81590700A06ED6 /* RxCocoa.framework */; };
 		FA0E1AE21C75650000CD7ADF /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0E1AE11C75650000CD7ADF /* Notification.storyboard */; };
 		FA0E1AE41C75652100CD7ADF /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E1AE31C75652100CD7ADF /* NotificationViewController.swift */; };
+		FA162E301CFEE5AC00903AFB /* MultiDirectionCollectionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA162E2F1CFEE5AC00903AFB /* MultiDirectionCollectionView.storyboard */; };
+		FA162E321CFEE5DC00903AFB /* MultiDirectionCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA162E311CFEE5DC00903AFB /* MultiDirectionCollectionViewController.swift */; };
+		FA162E351CFEE6FE00903AFB /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA162E341CFEE6FE00903AFB /* CustomCollectionViewCell.swift */; };
 		FA3361351CD8F94200B97B59 /* ChatUI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3361341CD8F94200B97B59 /* ChatUI.storyboard */; };
 		FA3361371CD8F95500B97B59 /* ChatUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3361361CD8F95500B97B59 /* ChatUIViewController.swift */; };
 		FA3361391CD9A0F100B97B59 /* ChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3361381CD9A0F100B97B59 /* ChatMessageCell.swift */; };
@@ -79,6 +82,9 @@
 		FA0BF5E91C81591500A06ED6 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		FA0E1AE11C75650000CD7ADF /* Notification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
 		FA0E1AE31C75652100CD7ADF /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		FA162E2F1CFEE5AC00903AFB /* MultiDirectionCollectionView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MultiDirectionCollectionView.storyboard; sourceTree = "<group>"; };
+		FA162E311CFEE5DC00903AFB /* MultiDirectionCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiDirectionCollectionViewController.swift; sourceTree = "<group>"; };
+		FA162E341CFEE6FE00903AFB /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA3361341CD8F94200B97B59 /* ChatUI.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChatUI.storyboard; sourceTree = "<group>"; };
 		FA3361361CD8F95500B97B59 /* ChatUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatUIViewController.swift; sourceTree = "<group>"; };
 		FA3361381CD9A0F100B97B59 /* ChatMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageCell.swift; sourceTree = "<group>"; };
@@ -211,6 +217,16 @@
 			name = Notification;
 			sourceTree = "<group>";
 		};
+		FA162E331CFEE6AF00903AFB /* MultiDirectionCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				FA162E2F1CFEE5AC00903AFB /* MultiDirectionCollectionView.storyboard */,
+				FA162E311CFEE5DC00903AFB /* MultiDirectionCollectionViewController.swift */,
+				FA162E341CFEE6FE00903AFB /* CustomCollectionViewCell.swift */,
+			);
+			name = MultiDirectionCollectionView;
+			sourceTree = "<group>";
+		};
 		FA84099A1CE178C600D33FFC /* Pager2 */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,6 +316,7 @@
 				FA8409AB1CE1E12900D33FFC /* WithWebView */,
 				FA8409AC1CE2107100D33FFC /* ChatUI */,
 				FABBBE9A1CED8CF200DE5A41 /* InfinityScroll */,
+				FA162E331CFEE6AF00903AFB /* MultiDirectionCollectionView */,
 				FABB07971C746945008CAB48 /* Assets.xcassets */,
 				FABB07991C746945008CAB48 /* LaunchScreen.storyboard */,
 				FABB079C1C746945008CAB48 /* Info.plist */,
@@ -433,6 +450,7 @@
 				FAB21E0B1CC901EC0081A2DF /* Collection.storyboard in Resources */,
 				FAC873AA1CD0ABDE00DB3BE2 /* TabPager.storyboard in Resources */,
 				FAC873AC1CD18FBE00DB3BE2 /* PagerWithScrollView.storyboard in Resources */,
+				FA162E301CFEE5AC00903AFB /* MultiDirectionCollectionView.storyboard in Resources */,
 				FAC8C55D1CBE915D001DE947 /* Pager.storyboard in Resources */,
 				FAC873A21CD07D3400DB3BE2 /* TabMenuCollectionViewCell.xib in Resources */,
 				FAC1DA7A1CD6004700D6A6C1 /* ParallaxImage.storyboard in Resources */,
@@ -487,6 +505,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FABBBE911CED637300DE5A41 /* TableView+Extensioins.swift in Sources */,
+				FA162E351CFEE6FE00903AFB /* CustomCollectionViewCell.swift in Sources */,
 				FAC8739E1CD075A800DB3BE2 /* TabMenuView.swift in Sources */,
 				FAC8C55E1CBE915D001DE947 /* PagerViewController.swift in Sources */,
 				FAC873A61CD0808A00DB3BE2 /* TabMenuItemOption.swift in Sources */,
@@ -508,6 +527,7 @@
 				FA3361371CD8F95500B97B59 /* ChatUIViewController.swift in Sources */,
 				FABB078F1C746945008CAB48 /* AppDelegate.swift in Sources */,
 				FAB166571CBF23FC0040CE71 /* TransitionViewController.swift in Sources */,
+				FA162E321CFEE5DC00903AFB /* MultiDirectionCollectionViewController.swift in Sources */,
 				FAC873AE1CD18FE800DB3BE2 /* PagerWithScrollViewViewController.swift in Sources */,
 				FA3361391CD9A0F100B97B59 /* ChatMessageCell.swift in Sources */,
 				FA02B5961CD310AA0062003E /* TabBarViewController.swift in Sources */,

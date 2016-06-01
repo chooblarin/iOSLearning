@@ -13,6 +13,7 @@ enum Example: String {
     case WithWebView
     case ChatUI
     case InfinityScroll
+    case MultiDirectionCollectionView
 
     static func allValues() -> [Example] {
         return [
@@ -27,7 +28,8 @@ enum Example: String {
             .ParallaxImage,
             .WithWebView,
             .ChatUI,
-            .InfinityScroll
+            .InfinityScroll,
+            .MultiDirectionCollectionView
         ]
     }
 }
