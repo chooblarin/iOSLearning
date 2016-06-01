@@ -1,5 +1,8 @@
 import UIKit
 
+extension CustomCollectionViewCell: ReusableView {
+}
+
 @IBDesignable
 class CustomCollectionViewCell: UICollectionViewCell {
 
