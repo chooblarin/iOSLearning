@@ -14,6 +14,7 @@ enum Example: String {
     case ChatUI
     case InfinityScroll
     case MultiDirectionCollectionView
+    case NestedScroll
 
     static func allValues() -> [Example] {
         return [
@@ -29,7 +30,8 @@ enum Example: String {
             .WithWebView,
             .ChatUI,
             .InfinityScroll,
-            .MultiDirectionCollectionView
+            .MultiDirectionCollectionView,
+            .NestedScroll
         ]
     }
 }

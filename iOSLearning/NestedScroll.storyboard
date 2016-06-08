@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oJn-QF-XYW">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Nested Scroll View Controller-->
+        <scene sceneID="ASh-Rc-nEk">
+            <objects>
+                <tableViewController id="oJn-QF-XYW" customClass="NestedScrollViewController" customModule="iOSLearning" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" id="bBn-9O-9FS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NestedScrollTableViewCell" rowHeight="120" id="CxA-Ix-d8m" customClass="NestedScrollTableViewCell" customModule="iOSLearning" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CxA-Ix-d8m" id="Bed-xZ-oTy">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="120"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lET-NU-Lmf">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="120"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nIx-MP-8LV">
+                                                <size key="itemSize" width="100" height="100"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="NestedScrollCollectionViewCell" id="3J3-Pl-SKl">
+                                                    <rect key="frame" x="0.0" y="10" width="100" height="100"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jUN-NX-3pq">
+                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                    <color key="backgroundColor" red="1" green="0.98234318620000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="jUN-NX-3pq" firstAttribute="top" secondItem="3J3-Pl-SKl" secondAttribute="top" id="16m-6K-a50"/>
+                                                        <constraint firstAttribute="bottom" secondItem="jUN-NX-3pq" secondAttribute="bottom" id="CAR-J1-pvz"/>
+                                                        <constraint firstItem="jUN-NX-3pq" firstAttribute="leading" secondItem="3J3-Pl-SKl" secondAttribute="leading" id="wki-es-mvA"/>
+                                                        <constraint firstAttribute="trailing" secondItem="jUN-NX-3pq" secondAttribute="trailing" id="ygo-et-1x1"/>
+                                                    </constraints>
+                                                </collectionViewCell>
+                                            </cells>
+                                            <connections>
+                                                <outlet property="dataSource" destination="CxA-Ix-d8m" id="lnO-DM-MqC"/>
+                                                <outlet property="delegate" destination="CxA-Ix-d8m" id="ZvU-4Z-xZa"/>
+                                            </connections>
+                                        </collectionView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="lET-NU-Lmf" firstAttribute="leading" secondItem="Bed-xZ-oTy" secondAttribute="leading" id="J6P-Vg-gp1"/>
+                                        <constraint firstAttribute="trailing" secondItem="lET-NU-Lmf" secondAttribute="trailing" id="Pbj-yd-OH5"/>
+                                        <constraint firstItem="lET-NU-Lmf" firstAttribute="top" secondItem="Bed-xZ-oTy" secondAttribute="top" id="gdT-GR-SdN"/>
+                                        <constraint firstAttribute="bottom" secondItem="lET-NU-Lmf" secondAttribute="bottom" id="vvp-Mh-hke"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="oJn-QF-XYW" id="efY-or-eoi"/>
+                            <outlet property="delegate" destination="oJn-QF-XYW" id="o9B-ad-hjT"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JqL-dy-yoo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="375" y="-364"/>
+        </scene>
+    </scenes>
+</document>

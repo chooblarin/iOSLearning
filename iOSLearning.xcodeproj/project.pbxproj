@@ -20,6 +20,9 @@
 		FA3361351CD8F94200B97B59 /* ChatUI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3361341CD8F94200B97B59 /* ChatUI.storyboard */; };
 		FA3361371CD8F95500B97B59 /* ChatUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3361361CD8F95500B97B59 /* ChatUIViewController.swift */; };
 		FA3361391CD9A0F100B97B59 /* ChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3361381CD9A0F100B97B59 /* ChatMessageCell.swift */; };
+		FA8266021D0829DD005B4D3E /* NestedScroll.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8266011D0829DD005B4D3E /* NestedScroll.storyboard */; };
+		FA8266041D0829F6005B4D3E /* NestedScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8266031D0829F6005B4D3E /* NestedScrollViewController.swift */; };
+		FA8266061D082B25005B4D3E /* NestedScrollTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8266051D082B25005B4D3E /* NestedScrollTableViewCell.swift */; };
 		FA8409971CE1787E00D33FFC /* Pager2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8409961CE1787E00D33FFC /* Pager2.storyboard */; };
 		FA8409991CE178AA00D33FFC /* Pager2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8409981CE178AA00D33FFC /* Pager2ViewController.swift */; };
 		FA84099C1CE1798200D33FFC /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA84099B1CE1798200D33FFC /* MenuView.swift */; };
@@ -88,6 +91,9 @@
 		FA3361341CD8F94200B97B59 /* ChatUI.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChatUI.storyboard; sourceTree = "<group>"; };
 		FA3361361CD8F95500B97B59 /* ChatUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatUIViewController.swift; sourceTree = "<group>"; };
 		FA3361381CD9A0F100B97B59 /* ChatMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageCell.swift; sourceTree = "<group>"; };
+		FA8266011D0829DD005B4D3E /* NestedScroll.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NestedScroll.storyboard; sourceTree = "<group>"; };
+		FA8266031D0829F6005B4D3E /* NestedScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedScrollViewController.swift; sourceTree = "<group>"; };
+		FA8266051D082B25005B4D3E /* NestedScrollTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedScrollTableViewCell.swift; sourceTree = "<group>"; };
 		FA8409961CE1787E00D33FFC /* Pager2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Pager2.storyboard; sourceTree = "<group>"; };
 		FA8409981CE178AA00D33FFC /* Pager2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pager2ViewController.swift; sourceTree = "<group>"; };
 		FA84099B1CE1798200D33FFC /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -227,6 +233,16 @@
 			name = MultiDirectionCollectionView;
 			sourceTree = "<group>";
 		};
+		FA8266071D083015005B4D3E /* NestedScroll */ = {
+			isa = PBXGroup;
+			children = (
+				FA8266011D0829DD005B4D3E /* NestedScroll.storyboard */,
+				FA8266031D0829F6005B4D3E /* NestedScrollViewController.swift */,
+				FA8266051D082B25005B4D3E /* NestedScrollTableViewCell.swift */,
+			);
+			name = NestedScroll;
+			sourceTree = "<group>";
+		};
 		FA84099A1CE178C600D33FFC /* Pager2 */ = {
 			isa = PBXGroup;
 			children = (
@@ -317,6 +333,7 @@
 				FA8409AC1CE2107100D33FFC /* ChatUI */,
 				FABBBE9A1CED8CF200DE5A41 /* InfinityScroll */,
 				FA162E331CFEE6AF00903AFB /* MultiDirectionCollectionView */,
+				FA8266071D083015005B4D3E /* NestedScroll */,
 				FABB07971C746945008CAB48 /* Assets.xcassets */,
 				FABB07991C746945008CAB48 /* LaunchScreen.storyboard */,
 				FABB079C1C746945008CAB48 /* Info.plist */,
@@ -449,6 +466,7 @@
 			files = (
 				FAB21E0B1CC901EC0081A2DF /* Collection.storyboard in Resources */,
 				FAC873AA1CD0ABDE00DB3BE2 /* TabPager.storyboard in Resources */,
+				FA8266021D0829DD005B4D3E /* NestedScroll.storyboard in Resources */,
 				FAC873AC1CD18FBE00DB3BE2 /* PagerWithScrollView.storyboard in Resources */,
 				FA162E301CFEE5AC00903AFB /* MultiDirectionCollectionView.storyboard in Resources */,
 				FAC8C55D1CBE915D001DE947 /* Pager.storyboard in Resources */,
@@ -519,10 +537,12 @@
 				FA84099C1CE1798200D33FFC /* MenuView.swift in Sources */,
 				FABB07B11C746C68008CAB48 /* Example.swift in Sources */,
 				FABB07911C746945008CAB48 /* MasterViewController.swift in Sources */,
+				FA8266061D082B25005B4D3E /* NestedScrollTableViewCell.swift in Sources */,
 				FA8409991CE178AA00D33FFC /* Pager2ViewController.swift in Sources */,
 				FAB21E0D1CC902110081A2DF /* CollectionViewController.swift in Sources */,
 				FA84099E1CE179B100D33FFC /* PageMenuViewController.swift in Sources */,
 				FAC873A81CD0AB4500DB3BE2 /* TabPagerViewController.swift in Sources */,
+				FA8266041D0829F6005B4D3E /* NestedScrollViewController.swift in Sources */,
 				FAC1DA781CD6001B00D6A6C1 /* ParallaxImageViewController.swift in Sources */,
 				FA3361371CD8F95500B97B59 /* ChatUIViewController.swift in Sources */,
 				FABB078F1C746945008CAB48 /* AppDelegate.swift in Sources */,
