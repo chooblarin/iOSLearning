@@ -15,6 +15,7 @@ enum Example: String {
     case InfinityScroll
     case MultiDirectionCollectionView
     case NestedScroll
+    case WeekCalendar
 
     static func allValues() -> [Example] {
         return [
@@ -31,7 +32,8 @@ enum Example: String {
             .ChatUI,
             .InfinityScroll,
             .MultiDirectionCollectionView,
-            .NestedScroll
+            .NestedScroll,
+            .WeekCalendar
         ]
     }
 }
