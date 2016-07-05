@@ -23,13 +23,6 @@
 		FA8266021D0829DD005B4D3E /* NestedScroll.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8266011D0829DD005B4D3E /* NestedScroll.storyboard */; };
 		FA8266041D0829F6005B4D3E /* NestedScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8266031D0829F6005B4D3E /* NestedScrollViewController.swift */; };
 		FA8266061D082B25005B4D3E /* NestedScrollTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8266051D082B25005B4D3E /* NestedScrollTableViewCell.swift */; };
-		FA8266091D08FE37005B4D3E /* WeekCalendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8266081D08FE37005B4D3E /* WeekCalendar.storyboard */; };
-		FA82660B1D08FE5D005B4D3E /* WeekCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA82660A1D08FE5D005B4D3E /* WeekCalendarViewController.swift */; };
-		FA82660D1D08FE9D005B4D3E /* SampleCalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA82660C1D08FE9D005B4D3E /* SampleCalendarEvent.swift */; };
-		FA82660F1D08FFA2005B4D3E /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA82660E1D08FFA2005B4D3E /* HeaderView.swift */; };
-		FA8266111D0902EB005B4D3E /* CalendarEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8266101D0902EB005B4D3E /* CalendarEventCell.swift */; };
-		FA8266131D090447005B4D3E /* CalendarDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8266121D090447005B4D3E /* CalendarDataSource.swift */; };
-		FA8266151D09067F005B4D3E /* WeekCalendarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8266141D09067F005B4D3E /* WeekCalendarLayout.swift */; };
 		FA8409971CE1787E00D33FFC /* Pager2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8409961CE1787E00D33FFC /* Pager2.storyboard */; };
 		FA8409991CE178AA00D33FFC /* Pager2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8409981CE178AA00D33FFC /* Pager2ViewController.swift */; };
 		FA84099C1CE1798200D33FFC /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA84099B1CE1798200D33FFC /* MenuView.swift */; };
@@ -101,13 +94,6 @@
 		FA8266011D0829DD005B4D3E /* NestedScroll.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NestedScroll.storyboard; sourceTree = "<group>"; };
 		FA8266031D0829F6005B4D3E /* NestedScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedScrollViewController.swift; sourceTree = "<group>"; };
 		FA8266051D082B25005B4D3E /* NestedScrollTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedScrollTableViewCell.swift; sourceTree = "<group>"; };
-		FA8266081D08FE37005B4D3E /* WeekCalendar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WeekCalendar.storyboard; sourceTree = "<group>"; };
-		FA82660A1D08FE5D005B4D3E /* WeekCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekCalendarViewController.swift; sourceTree = "<group>"; };
-		FA82660C1D08FE9D005B4D3E /* SampleCalendarEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleCalendarEvent.swift; sourceTree = "<group>"; };
-		FA82660E1D08FFA2005B4D3E /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
-		FA8266101D0902EB005B4D3E /* CalendarEventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEventCell.swift; sourceTree = "<group>"; };
-		FA8266121D090447005B4D3E /* CalendarDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDataSource.swift; sourceTree = "<group>"; };
-		FA8266141D09067F005B4D3E /* WeekCalendarLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeekCalendarLayout.swift; sourceTree = "<group>"; };
 		FA8409961CE1787E00D33FFC /* Pager2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Pager2.storyboard; sourceTree = "<group>"; };
 		FA8409981CE178AA00D33FFC /* Pager2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pager2ViewController.swift; sourceTree = "<group>"; };
 		FA84099B1CE1798200D33FFC /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -257,20 +243,6 @@
 			name = NestedScroll;
 			sourceTree = "<group>";
 		};
-		FA8266161D0928D0005B4D3E /* WeekCalendar */ = {
-			isa = PBXGroup;
-			children = (
-				FA8266081D08FE37005B4D3E /* WeekCalendar.storyboard */,
-				FA82660A1D08FE5D005B4D3E /* WeekCalendarViewController.swift */,
-				FA82660C1D08FE9D005B4D3E /* SampleCalendarEvent.swift */,
-				FA82660E1D08FFA2005B4D3E /* HeaderView.swift */,
-				FA8266101D0902EB005B4D3E /* CalendarEventCell.swift */,
-				FA8266121D090447005B4D3E /* CalendarDataSource.swift */,
-				FA8266141D09067F005B4D3E /* WeekCalendarLayout.swift */,
-			);
-			name = WeekCalendar;
-			sourceTree = "<group>";
-		};
 		FA84099A1CE178C600D33FFC /* Pager2 */ = {
 			isa = PBXGroup;
 			children = (
@@ -362,7 +334,6 @@
 				FABBBE9A1CED8CF200DE5A41 /* InfinityScroll */,
 				FA162E331CFEE6AF00903AFB /* MultiDirectionCollectionView */,
 				FA8266071D083015005B4D3E /* NestedScroll */,
-				FA8266161D0928D0005B4D3E /* WeekCalendar */,
 				FABB07971C746945008CAB48 /* Assets.xcassets */,
 				FABB07991C746945008CAB48 /* LaunchScreen.storyboard */,
 				FABB079C1C746945008CAB48 /* Info.plist */,
@@ -505,7 +476,6 @@
 				FA3361351CD8F94200B97B59 /* ChatUI.storyboard in Resources */,
 				FAC873A01CD078BB00DB3BE2 /* TabMenuView.xib in Resources */,
 				FABBBE971CED7EFA00DE5A41 /* InfinityScroll.storyboard in Resources */,
-				FA8266091D08FE37005B4D3E /* WeekCalendar.storyboard in Resources */,
 				FABB079B1C746945008CAB48 /* LaunchScreen.storyboard in Resources */,
 				FA8409971CE1787E00D33FFC /* Pager2.storyboard in Resources */,
 				FA8409A21CE179EC00D33FFC /* PageMenu.storyboard in Resources */,
@@ -562,7 +532,6 @@
 				FA0E1AE41C75652100CD7ADF /* NotificationViewController.swift in Sources */,
 				FA02B5991CD316150062003E /* UIColor.swift in Sources */,
 				FABBBE8B1CED62D100DE5A41 /* InfinityScrollViewController.swift in Sources */,
-				FA82660B1D08FE5D005B4D3E /* WeekCalendarViewController.swift in Sources */,
 				FAB21E0F1CC902880081A2DF /* CollectionViewCell.swift in Sources */,
 				FABBBE941CED7E3200DE5A41 /* LoadingTableViewCell.swift in Sources */,
 				FA84099C1CE1798200D33FFC /* MenuView.swift in Sources */,
@@ -572,22 +541,17 @@
 				FA8409991CE178AA00D33FFC /* Pager2ViewController.swift in Sources */,
 				FAB21E0D1CC902110081A2DF /* CollectionViewController.swift in Sources */,
 				FA84099E1CE179B100D33FFC /* PageMenuViewController.swift in Sources */,
-				FA82660F1D08FFA2005B4D3E /* HeaderView.swift in Sources */,
 				FAC873A81CD0AB4500DB3BE2 /* TabPagerViewController.swift in Sources */,
-				FA8266111D0902EB005B4D3E /* CalendarEventCell.swift in Sources */,
 				FA8266041D0829F6005B4D3E /* NestedScrollViewController.swift in Sources */,
 				FAC1DA781CD6001B00D6A6C1 /* ParallaxImageViewController.swift in Sources */,
-				FA8266151D09067F005B4D3E /* WeekCalendarLayout.swift in Sources */,
 				FA3361371CD8F95500B97B59 /* ChatUIViewController.swift in Sources */,
 				FABB078F1C746945008CAB48 /* AppDelegate.swift in Sources */,
 				FAB166571CBF23FC0040CE71 /* TransitionViewController.swift in Sources */,
 				FA162E321CFEE5DC00903AFB /* MultiDirectionCollectionViewController.swift in Sources */,
 				FAC873AE1CD18FE800DB3BE2 /* PagerWithScrollViewViewController.swift in Sources */,
-				FA82660D1D08FE9D005B4D3E /* SampleCalendarEvent.swift in Sources */,
 				FA3361391CD9A0F100B97B59 /* ChatMessageCell.swift in Sources */,
 				FA02B5961CD310AA0062003E /* TabBarViewController.swift in Sources */,
 				FA8409AA1CE1E12200D33FFC /* WithWebViewViewController.swift in Sources */,
-				FA8266131D090447005B4D3E /* CalendarDataSource.swift in Sources */,
 				FABBBE8E1CED62F600DE5A41 /* InfinityScrollTableViewCell.swift in Sources */,
 				FABB07B51C74708C008CAB48 /* AlertViewController.swift in Sources */,
 			);
