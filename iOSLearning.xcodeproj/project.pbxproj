@@ -20,6 +20,12 @@
 		FA3361351CD8F94200B97B59 /* ChatUI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA3361341CD8F94200B97B59 /* ChatUI.storyboard */; };
 		FA3361371CD8F95500B97B59 /* ChatUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3361361CD8F95500B97B59 /* ChatUIViewController.swift */; };
 		FA3361391CD9A0F100B97B59 /* ChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3361381CD9A0F100B97B59 /* ChatMessageCell.swift */; };
+		FA63467E1D480657003A4C16 /* Pinterest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA63467D1D480657003A4C16 /* Pinterest.storyboard */; };
+		FA6346801D48067C003A4C16 /* PinterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63467F1D48067C003A4C16 /* PinterestViewController.swift */; };
+		FA6346821D4806EA003A4C16 /* PinterestCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA6346811D4806EA003A4C16 /* PinterestCell.xib */; };
+		FA6346841D480712003A4C16 /* PinterestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6346831D480712003A4C16 /* PinterestCell.swift */; };
+		FA6346861D480857003A4C16 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6346851D480857003A4C16 /* FeedItem.swift */; };
+		FA6346891D48603E003A4C16 /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6346881D48603E003A4C16 /* PinterestLayout.swift */; };
 		FA8266021D0829DD005B4D3E /* NestedScroll.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8266011D0829DD005B4D3E /* NestedScroll.storyboard */; };
 		FA8266041D0829F6005B4D3E /* NestedScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8266031D0829F6005B4D3E /* NestedScrollViewController.swift */; };
 		FA8266061D082B25005B4D3E /* NestedScrollTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8266051D082B25005B4D3E /* NestedScrollTableViewCell.swift */; };
@@ -91,6 +97,12 @@
 		FA3361341CD8F94200B97B59 /* ChatUI.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChatUI.storyboard; sourceTree = "<group>"; };
 		FA3361361CD8F95500B97B59 /* ChatUIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatUIViewController.swift; sourceTree = "<group>"; };
 		FA3361381CD9A0F100B97B59 /* ChatMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageCell.swift; sourceTree = "<group>"; };
+		FA63467D1D480657003A4C16 /* Pinterest.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Pinterest.storyboard; sourceTree = "<group>"; };
+		FA63467F1D48067C003A4C16 /* PinterestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestViewController.swift; sourceTree = "<group>"; };
+		FA6346811D4806EA003A4C16 /* PinterestCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PinterestCell.xib; sourceTree = "<group>"; };
+		FA6346831D480712003A4C16 /* PinterestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestCell.swift; sourceTree = "<group>"; };
+		FA6346851D480857003A4C16 /* FeedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
+		FA6346881D48603E003A4C16 /* PinterestLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		FA8266011D0829DD005B4D3E /* NestedScroll.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NestedScroll.storyboard; sourceTree = "<group>"; };
 		FA8266031D0829F6005B4D3E /* NestedScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedScrollViewController.swift; sourceTree = "<group>"; };
 		FA8266051D082B25005B4D3E /* NestedScrollTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NestedScrollTableViewCell.swift; sourceTree = "<group>"; };
@@ -233,6 +245,18 @@
 			name = MultiDirectionCollectionView;
 			sourceTree = "<group>";
 		};
+		FA6346871D485F68003A4C16 /* Pinterest */ = {
+			isa = PBXGroup;
+			children = (
+				FA63467D1D480657003A4C16 /* Pinterest.storyboard */,
+				FA63467F1D48067C003A4C16 /* PinterestViewController.swift */,
+				FA6346811D4806EA003A4C16 /* PinterestCell.xib */,
+				FA6346831D480712003A4C16 /* PinterestCell.swift */,
+				FA6346881D48603E003A4C16 /* PinterestLayout.swift */,
+			);
+			name = Pinterest;
+			sourceTree = "<group>";
+		};
 		FA8266071D083015005B4D3E /* NestedScroll */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,6 +362,8 @@
 				FABB07991C746945008CAB48 /* LaunchScreen.storyboard */,
 				FABB079C1C746945008CAB48 /* Info.plist */,
 				FA02B59A1CD316690062003E /* Extension */,
+				FA6346871D485F68003A4C16 /* Pinterest */,
+				FA6346851D480857003A4C16 /* FeedItem.swift */,
 			);
 			path = iOSLearning;
 			sourceTree = "<group>";
@@ -465,10 +491,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAB21E0B1CC901EC0081A2DF /* Collection.storyboard in Resources */,
+				FA6346821D4806EA003A4C16 /* PinterestCell.xib in Resources */,
 				FAC873AA1CD0ABDE00DB3BE2 /* TabPager.storyboard in Resources */,
 				FA8266021D0829DD005B4D3E /* NestedScroll.storyboard in Resources */,
 				FAC873AC1CD18FBE00DB3BE2 /* PagerWithScrollView.storyboard in Resources */,
 				FA162E301CFEE5AC00903AFB /* MultiDirectionCollectionView.storyboard in Resources */,
+				FA63467E1D480657003A4C16 /* Pinterest.storyboard in Resources */,
 				FAC8C55D1CBE915D001DE947 /* Pager.storyboard in Resources */,
 				FAC873A21CD07D3400DB3BE2 /* TabMenuCollectionViewCell.xib in Resources */,
 				FAC1DA7A1CD6004700D6A6C1 /* ParallaxImage.storyboard in Resources */,
@@ -522,6 +550,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA6346841D480712003A4C16 /* PinterestCell.swift in Sources */,
 				FABBBE911CED637300DE5A41 /* TableView+Extensioins.swift in Sources */,
 				FA162E351CFEE6FE00903AFB /* CustomCollectionViewCell.swift in Sources */,
 				FAC8739E1CD075A800DB3BE2 /* TabMenuView.swift in Sources */,
@@ -533,6 +562,7 @@
 				FA02B5991CD316150062003E /* UIColor.swift in Sources */,
 				FABBBE8B1CED62D100DE5A41 /* InfinityScrollViewController.swift in Sources */,
 				FAB21E0F1CC902880081A2DF /* CollectionViewCell.swift in Sources */,
+				FA6346801D48067C003A4C16 /* PinterestViewController.swift in Sources */,
 				FABBBE941CED7E3200DE5A41 /* LoadingTableViewCell.swift in Sources */,
 				FA84099C1CE1798200D33FFC /* MenuView.swift in Sources */,
 				FABB07B11C746C68008CAB48 /* Example.swift in Sources */,
@@ -544,6 +574,7 @@
 				FAC873A81CD0AB4500DB3BE2 /* TabPagerViewController.swift in Sources */,
 				FA8266041D0829F6005B4D3E /* NestedScrollViewController.swift in Sources */,
 				FAC1DA781CD6001B00D6A6C1 /* ParallaxImageViewController.swift in Sources */,
+				FA6346891D48603E003A4C16 /* PinterestLayout.swift in Sources */,
 				FA3361371CD8F95500B97B59 /* ChatUIViewController.swift in Sources */,
 				FABB078F1C746945008CAB48 /* AppDelegate.swift in Sources */,
 				FAB166571CBF23FC0040CE71 /* TransitionViewController.swift in Sources */,
@@ -553,6 +584,7 @@
 				FA02B5961CD310AA0062003E /* TabBarViewController.swift in Sources */,
 				FA8409AA1CE1E12200D33FFC /* WithWebViewViewController.swift in Sources */,
 				FABBBE8E1CED62F600DE5A41 /* InfinityScrollTableViewCell.swift in Sources */,
+				FA6346861D480857003A4C16 /* FeedItem.swift in Sources */,
 				FABB07B51C74708C008CAB48 /* AlertViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
