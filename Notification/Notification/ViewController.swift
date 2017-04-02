@@ -4,6 +4,8 @@ import CoreLocation
 
 class ViewController: UIViewController {
 
+    let locationManager = CLLocationManager()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -40,13 +42,15 @@ class ViewController: UIViewController {
             }
             debugPrint("Granted: \(granted)")
         }
+    }
 
-        let locationManager = CLLocationManager()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
         switch CLLocationManager.authorizationStatus() {
         case .notDetermined:
             locationManager.requestAlwaysAuthorization()
         case .denied:
-            debugPrint("Denied")
             break
         case .authorizedAlways:
             locationManager.startUpdatingLocation()
