@@ -17,19 +17,19 @@ class ChatUIViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        NSNotificationCenter.defaultCenter()
+        NotificationCenter.default
             .addObserver(self,
                          selector: #selector(ChatUIViewController.handleKeyboardWillShow(_:)),
-                         name: UIKeyboardWillShowNotification,
+                         name: NSNotification.Name.UIKeyboardWillShow,
                          object: nil)
-        NSNotificationCenter.defaultCenter()
+        NotificationCenter.default
             .addObserver(self,
                          selector: #selector(ChatUIViewController.handleKeyboardWillHide(_:)),
-                         name: UIKeyboardWillHideNotification,
+                         name: NSNotification.Name.UIKeyboardWillHide,
                          object: nil)
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         tableView.dataSource = self
@@ -38,38 +38,38 @@ class ChatUIViewController: UIViewController {
         // tableView.tableFooterView = UIView(frame: CGRectZero)
     }
 
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
     }
 
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
 
-    func handleKeyboardWillShow(notification: NSNotification) {
+    func handleKeyboardWillShow(_ notification: Notification) {
         guard let userInfo = notification.userInfo else { return }
 
-        if let keyboardFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue() {
-            editorContainerBottomConstraint.constant = keyboardFrame.size.height
+        if let keyboardValue: NSValue = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue {
+            editorContainerBottomConstraint.constant = keyboardValue.cgRectValue.size.height
             view.layoutIfNeeded()
         }
     }
 
-    func handleKeyboardWillHide(notification: NSNotification) {
+    func handleKeyboardWillHide(_ notification: Notification) {
         editorContainerBottomConstraint.constant = 0
         view.layoutIfNeeded()
     }
 
     // MARK: - IBActions
 
-    @IBAction func sendMessage(sender: UIButton) {
+    @IBAction func sendMessage(_ sender: UIButton) {
         if let message = textView.text {
             messages.append(message)
-            let indexPath = NSIndexPath(forItem: messages.count - 1, inSection: 0)
+            let indexPath = IndexPath(item: messages.count - 1, section: 0)
             tableView.beginUpdates()
-            tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Bottom)
+            tableView.insertRows(at: [indexPath], with: .bottom)
             tableView.endUpdates()
-            tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Bottom, animated: true)
+            tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
         }
         textView.text = ""
         let size = textView.sizeThatFits(textView.frame.size)
@@ -84,12 +84,12 @@ let cellIdentifier = "ChatMessageCell"
 
 extension ChatUIViewController: UITableViewDataSource {
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messages.count
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ChatMessageCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ChatMessageCell
         cell.messageLabel.text = messages[indexPath.row]
         return cell
     }
@@ -99,7 +99,7 @@ extension ChatUIViewController: UITableViewDataSource {
 
 extension ChatUIViewController: UITextViewDelegate {
 
-    func textViewDidChange(textView: UITextView) {
+    func textViewDidChange(_ textView: UITextView) {
         let maxHeight: CGFloat = 100.0
         guard textView.frame.size.height < maxHeight else { return }
 
@@ -107,7 +107,7 @@ extension ChatUIViewController: UITextViewDelegate {
         textViewHeightConstraint.constant = size.height
     }
 
-    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         textView.scrollRangeToVisible(range)
         return true
     }

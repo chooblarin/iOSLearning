@@ -24,7 +24,7 @@ class PagerWithScrollViewViewController: UIViewController {
             //
         }
     }
-    private var needsUpdateNavigationBar = true
+    fileprivate var needsUpdateNavigationBar = true
 
     // MARK: - IBOutlets
 
@@ -52,7 +52,7 @@ class PagerWithScrollViewViewController: UIViewController {
 //        updateNavigationBar()
 //    }
 
-    private func layoutChildViewControllers() {
+    fileprivate func layoutChildViewControllers() {
         let previousChildViewControllers = childViewControllers
         let count = viewControllers.count
 
@@ -61,13 +61,13 @@ class PagerWithScrollViewViewController: UIViewController {
         let nextViewController = viewControllers[(currentPage + 1 + count) % count]
 
         childViewControllers.forEach { viewController in
-            viewController.willMoveToParentViewController(nil)
+            viewController.willMove(toParentViewController: nil)
             viewController.view.removeFromSuperview()
             viewController.removeFromParentViewController()
         }
 
         let size = scrollView.frame.size
-        previousViewController.view.frame = CGRect(origin: CGPointZero, size: size)
+        previousViewController.view.frame = CGRect(origin: CGPoint.zero, size: size)
         currentViewController.view.frame = CGRect(
             origin: CGPoint(x: scrollView.frame.width, y: 0.0),
             size: size)
@@ -82,11 +82,11 @@ class PagerWithScrollViewViewController: UIViewController {
                 if !previousChildViewControllers.contains(viewController) {
                     // TODO
                 }
-                viewController.didMoveToParentViewController(self)
+                viewController.didMove(toParentViewController: self)
         }
     }
 
-    private func updateNavigationBar() {
+    fileprivate func updateNavigationBar() {
     }
 }
 
@@ -100,13 +100,13 @@ extension PagerWithScrollViewViewController {
         scrollView.scrollsToTop = false
 
         let storyboard = UIStoryboard(name: "Pager", bundle: nil)
-        let rvc = storyboard.instantiateViewControllerWithIdentifier("RedViewController")
-        let gvc = storyboard.instantiateViewControllerWithIdentifier("GreenViewController")
-        let bvc = storyboard.instantiateViewControllerWithIdentifier("BlueViewController")
+        let rvc = storyboard.instantiateViewController(withIdentifier: "RedViewController")
+        let gvc = storyboard.instantiateViewController(withIdentifier: "GreenViewController")
+        let bvc = storyboard.instantiateViewController(withIdentifier: "BlueViewController")
         viewControllers = [rvc, gvc, bvc]
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         view.layoutIfNeeded()
@@ -122,7 +122,7 @@ extension PagerWithScrollViewViewController {
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        scrollView.contentSize = CGSizeMake(view.frame.width * 3.0, view.frame.height)
+        scrollView.contentSize = CGSize(width: view.frame.width * 3.0, height: view.frame.height)
     }
 
     override func didReceiveMemoryWarning() {
@@ -135,7 +135,7 @@ extension PagerWithScrollViewViewController {
 
 extension PagerWithScrollViewViewController: UIScrollViewDelegate {
 
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let count = viewControllers.count
         guard 0 < count else { return }
         

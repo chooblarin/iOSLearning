@@ -13,14 +13,13 @@ class InfinityScrollViewController: UITableViewController {
         }
     }
     let disposeBag = DisposeBag()
-    let scheduler = SerialDispatchQueueScheduler(globalConcurrentQueueQOS: .Background)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.registerNib(
+        tableView.register(
             UINib(nibName: InfinityScrollTableViewCell.nibName, bundle: nil),
             forCellReuseIdentifier: InfinityScrollTableViewCell.reusableIdentifier)
-        tableView.registerNib(
+        tableView.register(
             UINib(nibName: LoadingTableViewCell.nibName, bundle: nil),
             forCellReuseIdentifier: LoadingTableViewCell.reusableIdentifier)
         loadItems()
@@ -31,15 +30,13 @@ class InfinityScrollViewController: UITableViewController {
 
         isLoading = true
 
-        (0...20).toObservable()
+        Observable.from(0...20)
             .map { String($0) }
             .toArray()
-            .delaySubscription(2.0, scheduler: scheduler)
-            .observeOn(MainScheduler.instance)
-            .subscribeNext { [weak self] (items) in
+            .subscribe(onNext: { [weak self] (items: [String]) in
                 self?.items += items
                 self?.isLoading = false
-            }
+            })
             .addDisposableTo(disposeBag)
     }
 }
@@ -48,19 +45,19 @@ class InfinityScrollViewController: UITableViewController {
 
 extension InfinityScrollViewController {
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count + 1
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.item < items.count {
-            let cell = tableView.dequeueReusableCellWithIdentifier(InfinityScrollTableViewCell.reusableIdentifier, forIndexPath: indexPath) as! InfinityScrollTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: InfinityScrollTableViewCell.reusableIdentifier, for: indexPath) as! InfinityScrollTableViewCell
             let item = items[indexPath.row]
             cell.numberLabel.text = item
             return cell
 
         } else {
-            let cell = tableView.dequeueReusableCellWithIdentifier(LoadingTableViewCell.reusableIdentifier, forIndexPath: indexPath) as! LoadingTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: LoadingTableViewCell.reusableIdentifier, for: indexPath) as! LoadingTableViewCell
             cell.show()
             return cell
         }
@@ -71,7 +68,7 @@ extension InfinityScrollViewController {
 
 extension InfinityScrollViewController {
 
-    override func scrollViewDidScroll(scrollView: UIScrollView) {
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let contentOffset = scrollView.contentOffset.y
         let maximumOffset = scrollView.contentSize.height - scrollView.frame.size.height
         if (maximumOffset - contentOffset) <= threshold {

@@ -11,22 +11,22 @@ struct FeedItem {
         self.comment = comment
     }
 
-    func heightForTitle(font: UIFont, width: CGFloat) -> CGFloat {
-        let size = CGSizeMake(width, CGFloat(MAXFLOAT))
+    func heightForTitle(_ font: UIFont, width: CGFloat) -> CGFloat {
+        let size = CGSize(width: width, height: CGFloat(MAXFLOAT))
         let attrs = [NSFontAttributeName: font]
         let rect = NSAttributedString(string: title, attributes: attrs)
-            .boundingRectWithSize(size,
-                                  options: NSStringDrawingOptions.UsesLineFragmentOrigin,
+            .boundingRect(with: size,
+                                  options: NSStringDrawingOptions.usesLineFragmentOrigin,
                                   context: nil)
         return ceil(rect.height)
     }
 
-    func heightForComment(font: UIFont, width: CGFloat) -> CGFloat {
-        let size = CGSizeMake(width, CGFloat(MAXFLOAT))
+    func heightForComment(_ font: UIFont, width: CGFloat) -> CGFloat {
+        let size = CGSize(width: width, height: CGFloat(MAXFLOAT))
         let attrs = [NSFontAttributeName: font]
         let rect = NSString(string: comment)
-            .boundingRectWithSize(size,
-                                  options: NSStringDrawingOptions.UsesLineFragmentOrigin,
+            .boundingRect(with: size,
+                                  options: NSStringDrawingOptions.usesLineFragmentOrigin,
                                   attributes: attrs,
                                   context: nil)
         return ceil(rect.height)

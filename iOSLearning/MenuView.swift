@@ -8,12 +8,12 @@ class MenuView: UIView {
 
         let titleLabel = UILabel()
 
-        override var selected: Bool {
+        override var isSelected: Bool {
             didSet {
-                if selected {
-                    titleLabel.textColor = UIColor.whiteColor()
+                if isSelected {
+                    titleLabel.textColor = UIColor.white
                 } else {
-                    titleLabel.textColor = UIColor.whiteColor().colorWithAlphaComponent(0.7)
+                    titleLabel.textColor = UIColor.white.withAlphaComponent(0.7)
                 }
             }
         }
@@ -28,11 +28,11 @@ class MenuView: UIView {
             commonInit()
         }
 
-        private func commonInit() {
-            selected = false
-            titleLabel.font = UIFont.boldSystemFontOfSize(14.0)
-            titleLabel.textAlignment = .Center
-            titleLabel.backgroundColor = UIColor.blackColor()
+        fileprivate func commonInit() {
+            isSelected = false
+            titleLabel.font = UIFont.boldSystemFont(ofSize: 14.0)
+            titleLabel.textAlignment = .center
+            titleLabel.backgroundColor = UIColor.black
             addSubview(titleLabel)
         }
 
@@ -48,7 +48,7 @@ class MenuView: UIView {
 
     var selectedIndex: Int {
         get {
-            if let indexPath = collectionView.indexPathsForSelectedItems()?.first {
+            if let indexPath = collectionView.indexPathsForSelectedItems?.first {
                 return indexPath.item
             } else {
                 return 0
@@ -57,9 +57,9 @@ class MenuView: UIView {
         set {
             guard 0 < menuTitle.count else { return }
 
-            let indexPath = NSIndexPath(forItem: newValue, inSection: 0)
-            collectionView.selectItemAtIndexPath(indexPath, animated: false, scrollPosition: .None)
-            collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .None, animated: true)
+            let indexPath = IndexPath(item: newValue, section: 0)
+            collectionView.selectItem(at: indexPath, animated: false, scrollPosition: UICollectionViewScrollPosition())
+            collectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition(), animated: true)
             // update selection indicator
         }
     }
@@ -75,16 +75,16 @@ class MenuView: UIView {
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 0.0
         layout.minimumLineSpacing = 0.0
-        layout.scrollDirection = .Horizontal
+        layout.scrollDirection = .horizontal
 
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
-        collectionView.registerClass(Cell.self, forCellWithReuseIdentifier: Cell.reuseIdentifier)
-        collectionView.backgroundColor = UIColor.cyanColor()
+        collectionView.register(Cell.self, forCellWithReuseIdentifier: Cell.reuseIdentifier)
+        collectionView.backgroundColor = UIColor.cyan
         collectionView.bounces = false
         return collectionView
     }()
 
-    var pageItemPressBlock: ((index: Int, direction: UIPageViewControllerNavigationDirection) -> Void)?
+    var pageItemPressBlock: ((_ index: Int, _ direction: UIPageViewControllerNavigationDirection) -> Void)?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -96,11 +96,11 @@ class MenuView: UIView {
         commonInit()
     }
 
-    private func commonInit() {
+    fileprivate func commonInit() {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.frame = self.bounds
-        collectionView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         addSubview(collectionView)
     }
 }
@@ -109,12 +109,12 @@ class MenuView: UIView {
 
 extension MenuView: UICollectionViewDataSource {
 
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return menuTitle.count
     }
 
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Cell.reuseIdentifier, forIndexPath: indexPath) as? Cell else {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cell.reuseIdentifier, for: indexPath) as? Cell else {
             fatalError("Could not dequeue cell by reuse identifier \(Cell.reuseIdentifier)")
         }
         cell.titleLabel.text = menuTitle[indexPath.row]
@@ -126,8 +126,8 @@ extension MenuView: UICollectionViewDataSource {
 
 extension MenuView: UICollectionViewDelegate {
 
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        pageItemPressBlock?(index: indexPath.row, direction: .Forward)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        pageItemPressBlock?(indexPath.row, .forward)
     }
 }
 

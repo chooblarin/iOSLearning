@@ -22,11 +22,11 @@ class PageMenuViewController: UIViewController {
         
         self.automaticallyAdjustsScrollViewInsets = false
         
-        self.navigationController?.navigationBar.barTintColor = UIColor.brownColor()
+        self.navigationController?.navigationBar.barTintColor = UIColor.brown
         
         var titles = [String]()
         for i in 0..<10 {
-            let vc = storyboard?.instantiateViewControllerWithIdentifier("DataViewController") as! DataViewController
+            let vc = storyboard?.instantiateViewController(withIdentifier: "DataViewController") as! DataViewController
             vc.labelString = i.description
             titles.append(i.description)
             viewControllerArray.append(vc)
@@ -41,7 +41,7 @@ class PageMenuViewController: UIViewController {
         pageViewController.delegate = self
         
         if let first = viewControllerArray.first {
-            pageViewController.setViewControllers([first], direction: .Forward, animated: false, completion: nil)
+            pageViewController.setViewControllers([first], direction: .forward, animated: false, completion: nil)
         }
         
         let scrollView = pageViewController.view.subviews.flatMap { $0 as? UIScrollView }.first
@@ -53,7 +53,7 @@ class PageMenuViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func displayViewControllerAt(index: Int, direction: UIPageViewControllerNavigationDirection, animated: Bool) {
+    func displayViewControllerAt(_ index: Int, direction: UIPageViewControllerNavigationDirection, animated: Bool) {
         pageViewController.setViewControllers(
             [viewControllerArray[index]],
             direction: direction,
@@ -66,15 +66,15 @@ class PageMenuViewController: UIViewController {
 
 extension PageMenuViewController: UIPageViewControllerDataSource {
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        guard let index = viewControllerArray.indexOf(viewController) where 0 < index else {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        guard let index = viewControllerArray.index(of: viewController), 0 < index else {
             return nil
         }
         return viewControllerArray[index - 1]
     }
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        guard var index = viewControllerArray.indexOf(viewController) else { return nil }
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        guard var index = viewControllerArray.index(of: viewController) else { return nil }
         index += 1
         if index < viewControllerArray.count {
             return viewControllerArray[index]
@@ -88,12 +88,12 @@ extension PageMenuViewController: UIPageViewControllerDataSource {
 
 extension PageMenuViewController: UIPageViewControllerDelegate {
     
-    func pageViewController(pageViewController: UIPageViewController, willTransitionToViewControllers pendingViewControllers: [UIViewController]) {
+    func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
     }
     
-    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if let vc = pageViewController.viewControllers?.first,
-            let index = viewControllerArray.indexOf(vc) {
+            let index = viewControllerArray.index(of: vc) {
             menuView.selectedIndex = index
         }
     }
@@ -103,7 +103,7 @@ extension PageMenuViewController: UIPageViewControllerDelegate {
 
 extension PageMenuViewController: UIScrollViewDelegate {
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let count = viewControllerArray.count
         guard 0 < count else { return }
         

@@ -25,9 +25,9 @@ class WithWebViewViewController: UIViewController {
         imageView.image = UIImage(named: "Image01")
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let request = NSURLRequest(URL: NSURL(string: "https://news.ycombinator.com/")!)
+        let request = URLRequest(url: URL(string: "https://news.ycombinator.com/")!)
         webView.loadRequest(request)
     }
 
@@ -48,7 +48,7 @@ class WithWebViewViewController: UIViewController {
 }
 
 extension WithWebViewViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         print("scroll offset : \(scrollView.contentOffset.y)")
         if scrollView.contentOffset.y + headerView.frame.height < 0 {
             containerTopConstraint.constant = webView.scrollView.contentOffset.y + headerView.frame.height

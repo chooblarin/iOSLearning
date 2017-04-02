@@ -10,9 +10,9 @@ class Pager2ViewController: UIViewController {
 
     // MARK: - IBAnctions
 
-    @IBAction func launch(sender: UIButton) {
+    @IBAction func launch(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "PageMenu", bundle: nil)
         let vc = storyboard.instantiateInitialViewController()!
-        self.presentViewController(vc, animated: true, completion: nil)
+        self.present(vc, animated: true, completion: nil)
     }
 }

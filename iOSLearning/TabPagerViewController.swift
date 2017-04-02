@@ -3,7 +3,7 @@ import UIKit
 class TabPagerViewController: UIPageViewController {
 
     static func create() -> TabPagerViewController {
-        let storyboard = UIStoryboard(name: "TabPager", bundle: NSBundle(forClass: TabPagerViewController.self))
+        let storyboard = UIStoryboard(name: "TabPager", bundle: Bundle(for: TabPagerViewController.self))
         return storyboard.instantiateInitialViewController() as! TabPagerViewController
     }
 
@@ -17,18 +17,18 @@ class TabPagerViewController: UIPageViewController {
             tabItemsCount = tabMenuItems.count
         }
     }
-    private var currentIndex: Int? {
+    fileprivate var currentIndex: Int? {
         guard let viewController = self.viewControllers?.first else {
             return nil
         }
-        return tabMenuItems.map { $0.viewController }.indexOf(viewController)
+        return tabMenuItems.map { $0.viewController }.index(of: viewController)
     }
 
-    private var beforeIndex: Int = 0
-    private var tabItemsCount: Int = 0
-    private var defaultContentOffsetX: CGFloat = UIScreen.mainScreen().bounds.width
-    private var shouldScrollCurrentBar: Bool = true
-    lazy private var tabMenuView: TabMenuView = self.configureTabMenuView()
+    fileprivate var beforeIndex: Int = 0
+    fileprivate var tabItemsCount: Int = 0
+    fileprivate var defaultContentOffsetX: CGFloat = UIScreen.main.bounds.width
+    fileprivate var shouldScrollCurrentBar: Bool = true
+    lazy fileprivate var tabMenuView: TabMenuView = self.configureTabMenuView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +42,7 @@ class TabPagerViewController: UIPageViewController {
         if !tabMenuItems.isEmpty {
             setViewControllers(
                 [tabMenuItems[beforeIndex].viewController],
-                direction: .Forward,
+                direction: .forward,
                 animated: false,
                 completion: nil)
         }
@@ -57,25 +57,25 @@ class TabPagerViewController: UIPageViewController {
         updateNavigationBar()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if nil == tabMenuView.superview {
             tabMenuView = configureTabMenuView()
         }
-        if let currentIndex = currentIndex where isInfinity {
+        if let currentIndex = currentIndex, isInfinity {
             tabMenuView.updateCurrentIndex(currentIndex)
         }
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         updateNavigationBar()
     }
 
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.navigationBar.shadowImage = nil
-        navigationController?.navigationBar.setBackgroundImage(nil, forBarMetrics: .Default)
+        navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
     }
 
     func configureTabMenuView() -> TabMenuView {
@@ -84,10 +84,10 @@ class TabPagerViewController: UIPageViewController {
         
         let height = NSLayoutConstraint(
             item: tabMenuView,
-            attribute: .Height,
-            relatedBy: .Equal,
+            attribute: .height,
+            relatedBy: .equal,
             toItem: nil,
-            attribute: .Height,
+            attribute: .height,
             multiplier: 1.0,
             constant: option.tabHeight)
         tabMenuView.addConstraint(height)
@@ -95,26 +95,26 @@ class TabPagerViewController: UIPageViewController {
 
         let left = NSLayoutConstraint(
             item: tabMenuView,
-            attribute: .Leading,
-            relatedBy: .Equal,
+            attribute: .leading,
+            relatedBy: .equal,
             toItem: view,
-            attribute: .Leading,
+            attribute: .leading,
             multiplier: 1.0,
             constant: 0.0)
         let top = NSLayoutConstraint(
             item: tabMenuView,
-            attribute: .Top,
-            relatedBy: .Equal,
+            attribute: .top,
+            relatedBy: .equal,
             toItem: topLayoutGuide,
-            attribute: .Bottom,
+            attribute: .bottom,
             multiplier:1.0,
             constant: 0.0)
         let right = NSLayoutConstraint(
             item: view,
-            attribute: .Trailing,
-            relatedBy: .Equal,
+            attribute: .trailing,
+            relatedBy: .equal,
             toItem: tabMenuView,
-            attribute: .Trailing,
+            attribute: .trailing,
             multiplier: 1.0,
             constant: 0.0)
         view.addConstraints([left, top, right])
@@ -132,11 +132,11 @@ class TabPagerViewController: UIPageViewController {
     func updateNavigationBar() {
         if let navigationBar = navigationController?.navigationBar {
             navigationBar.shadowImage = UIImage()
-            navigationBar.setBackgroundImage(option.tabBackgroundImage, forBarMetrics: .Default)
+            navigationBar.setBackgroundImage(option.tabBackgroundImage, for: .default)
         }
     }
 
-    func displayControllerWithIndex(index: Int, direction: UIPageViewControllerNavigationDirection, animated: Bool) {
+    func displayControllerWithIndex(_ index: Int, direction: UIPageViewControllerNavigationDirection, animated: Bool) {
         beforeIndex = index
         shouldScrollCurrentBar = false
         let nextViewController = tabMenuItems[index].viewController
@@ -156,16 +156,16 @@ class TabPagerViewController: UIPageViewController {
 
 extension TabPagerViewController: UIPageViewControllerDataSource {
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         return popViewController(viewController, isAfter: false)
     }
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         return popViewController(viewController, isAfter: true)
     }
     
-    private func popViewController(viewController: UIViewController, isAfter: Bool) -> UIViewController? {
-        guard var index = tabMenuItems.map({ $0.viewController }).indexOf(viewController) else {
+    fileprivate func popViewController(_ viewController: UIViewController, isAfter: Bool) -> UIViewController? {
+        guard var index = tabMenuItems.map({ $0.viewController }).index(of: viewController) else {
             return nil
         }
         index = index + (isAfter ? 1 : -1)
@@ -186,18 +186,18 @@ extension TabPagerViewController: UIPageViewControllerDataSource {
 // MARK: - UIPageViewControllerDelegate
 
 extension TabPagerViewController: UIPageViewControllerDelegate {
-    func pageViewController(pageViewController: UIPageViewController, willTransitionToViewControllers pendingViewControllers: [UIViewController]) {
+    func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
         shouldScrollCurrentBar = true
         tabMenuView.scrollToHorizontalCenter()
-        tabMenuView.collectionView.userInteractionEnabled = false // to prevent the hit repeatedly while animating
+        tabMenuView.collectionView.isUserInteractionEnabled = false // to prevent the hit repeatedly while animating
     }
 
-    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-        if let currentIndex = currentIndex where currentIndex < tabItemsCount {
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if let currentIndex = currentIndex, currentIndex < tabItemsCount {
             tabMenuView.updateCurrentIndex(currentIndex)
             beforeIndex = currentIndex
         }
-        tabMenuView.collectionView.userInteractionEnabled = true
+        tabMenuView.collectionView.isUserInteractionEnabled = true
     }
 }
 
@@ -205,7 +205,7 @@ extension TabPagerViewController: UIPageViewControllerDelegate {
 
 extension TabPagerViewController: UIScrollViewDelegate {
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.x == defaultContentOffsetX || !shouldScrollCurrentBar {
             return
         }

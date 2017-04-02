@@ -6,9 +6,9 @@ class TransitionViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    @IBAction func goNext(sender: UIButton) {
+    @IBAction func goNext(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Transition", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("Second")
+        let vc = storyboard.instantiateViewController(withIdentifier: "Second")
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

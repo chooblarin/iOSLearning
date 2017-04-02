@@ -39,23 +39,23 @@ class ParallaxImageViewController: UITableViewController {
         return imageVisibleHeight + maxOffset
     }
 
-    func parallaxOffsetFor(newOffsetY: CGFloat, cell: UITableViewCell) -> CGFloat {
+    func parallaxOffsetFor(_ newOffsetY: CGFloat, cell: UITableViewCell) -> CGFloat {
         return ((newOffsetY - cell.frame.origin.y) / parallaxImageHeight) * parallaxOffsetSpeed
     }
 
     // MARK: - UITableViewDataSource
 
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return cellHeight
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count + 1
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "ImageCell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ImageCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ImageCell
         cell.photoImageView.image = items[indexPath.row]
         cell.imageHeightConstraint.constant = parallaxImageHeight
         cell.imageTopConstraint.constant = parallaxOffsetFor(tableView.contentOffset.y, cell: cell)
@@ -64,7 +64,7 @@ class ParallaxImageViewController: UITableViewController {
 
     // MARK: - UIScrollViewDelegate
 
-    override func scrollViewDidScroll(scrollView: UIScrollView) {
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = tableView.contentOffset.y
         tableView.visibleCells.forEach { (cell) in
             if let imageCell = cell as? ImageCell {

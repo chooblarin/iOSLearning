@@ -6,7 +6,7 @@ class PagerViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    @IBAction func showDemo(sender: UIButton) {
+    @IBAction func showDemo(_ sender: UIButton) {
         let tabPagerViewController = TabPagerViewController.create()
         tabPagerViewController.tabMenuItems = tabMenuItems()
         tabPagerViewController.isInfinity = false
@@ -16,12 +16,12 @@ class PagerViewController: UIViewController {
     func tabMenuItems() -> [(viewController: UIViewController, title: String)] {
         let storyboard = UIStoryboard(name: "Pager", bundle: nil)
 
-        let rvc = storyboard.instantiateViewControllerWithIdentifier("RedViewController")
-        let gvc = storyboard.instantiateViewControllerWithIdentifier("GreenViewController")
-        let bvc = storyboard.instantiateViewControllerWithIdentifier("BlueViewController")
-        let rvc2 = storyboard.instantiateViewControllerWithIdentifier("RedViewController")
-        let gvc2 = storyboard.instantiateViewControllerWithIdentifier("GreenViewController")
-        let bvc2 = storyboard.instantiateViewControllerWithIdentifier("BlueViewController")
+        let rvc = storyboard.instantiateViewController(withIdentifier: "RedViewController")
+        let gvc = storyboard.instantiateViewController(withIdentifier: "GreenViewController")
+        let bvc = storyboard.instantiateViewController(withIdentifier: "BlueViewController")
+        let rvc2 = storyboard.instantiateViewController(withIdentifier: "RedViewController")
+        let gvc2 = storyboard.instantiateViewController(withIdentifier: "GreenViewController")
+        let bvc2 = storyboard.instantiateViewController(withIdentifier: "BlueViewController")
         return [(rvc, "Red"), (gvc, "Green"), (bvc, "Blue"),
         (rvc2, "Red"), (gvc2, "Greeeeeeeeen"), (bvc2, "Blue")]
     }

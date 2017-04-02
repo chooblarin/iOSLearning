@@ -24,13 +24,13 @@ class CollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(CollectionViewController.reloadData), forControlEvents: .ValueChanged)
+        refreshControl.addTarget(self, action: #selector(CollectionViewController.reloadData), for: .valueChanged)
         collectionView?.addSubview(refreshControl)
 
-        Observable.range(start: 0, count: 20)
-            .subscribeNext { [weak self] num in
+        Observable.from(0...20)
+            .subscribe(onNext: { [weak self] (num: Int) in
                 self?.items.append(num)
-            }
+            })
             .addDisposableTo(disposeBag)
 
         // to preserve selection between presentations
@@ -38,19 +38,19 @@ class CollectionViewController: UICollectionViewController {
     }
 
     func reloadData() {
-        items = items.shuffle()
+        items = items.shuffled()
         refreshControl.endRefreshing()
     }
 
     // MARK: UICollectionViewDataSource
 
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return items.count
     }
 
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CollectionViewCell
-        cell.backgroundColor = UIColor.yellowColor()
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CollectionViewCell
+        cell.backgroundColor = UIColor.yellow
         let num = items[indexPath.row]
         let imageName = String(format: "Image%02d", num % 10)
         let image = UIImage(named: imageName)
@@ -58,25 +58,25 @@ class CollectionViewController: UICollectionViewController {
         return cell
     }
 
-    override func collectionView(collectionView: UICollectionView, didHighlightItemAtIndexPath indexPath: NSIndexPath) {
-        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! CollectionViewCell
-        cell.coverView.hidden = false
+    override func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
+        cell.coverView.isHidden = false
     }
 
-    override func collectionView(collectionView: UICollectionView, didUnhighlightItemAtIndexPath indexPath: NSIndexPath) {
-        let cell = collectionView.cellForItemAtIndexPath(indexPath) as! CollectionViewCell
-        cell.coverView.hidden = true
+    override func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! CollectionViewCell
+        cell.coverView.isHidden = true
     }
 
     // MARK: UICollectionViewDelegate
 
-    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let num = items[indexPath.row]
 
-        let action = UIAlertAction(title: "Cool!", style: .Default, handler: nil)
-        let alertController = UIAlertController(title: "You Tapped", message: "This is No.\(num)", preferredStyle: .Alert)
+        let action = UIAlertAction(title: "Cool!", style: .default, handler: nil)
+        let alertController = UIAlertController(title: "You Tapped", message: "This is No.\(num)", preferredStyle: .alert)
         alertController.addAction(action)
-        presentViewController(alertController, animated: true, completion: nil)
+        present(alertController, animated: true, completion: nil)
     }
 }
 
@@ -84,7 +84,7 @@ class CollectionViewController: UICollectionViewController {
 
 extension CollectionViewController: UICollectionViewDelegateFlowLayout {
 
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size: CGFloat
         if 0 == indexPath.row {
             size = self.view.bounds.width - (2 * inset)
@@ -94,32 +94,32 @@ extension CollectionViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: size, height: size)
     }
 
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return sectionInsets
     }
 }
 
 // ===
 
-extension CollectionType {
-    /// Return a copy of `self` with its elements shuffled
-    func shuffle() -> [Generator.Element] {
-        var list = Array(self)
-        list.shuffleInPlace()
-        return list
+extension MutableCollection where Indices.Iterator.Element == Index {
+    /// Shuffles the contents of this collection.
+    mutating func shuffle() {
+        let c = count
+        guard c > 1 else { return }
+        for (firstUnshuffled , unshuffledCount) in zip(indices, stride(from: c, to: 1, by: -1)) {
+            let d: IndexDistance = numericCast(arc4random_uniform(numericCast(unshuffledCount)))
+            guard d != 0 else { continue }
+            let i = index(firstUnshuffled, offsetBy: d)
+            swap(&self[firstUnshuffled], &self[i])
+        }
     }
 }
 
-extension MutableCollectionType where Index == Int {
-    /// Shuffle the elements of `self` in-place.
-    mutating func shuffleInPlace() {
-        // empty and single-element collections don't shuffle
-        if count < 2 { return }
-        
-        for i in 0..<count - 1 {
-            let j = Int(arc4random_uniform(UInt32(count - i))) + i
-            guard i != j else { continue }
-            swap(&self[i], &self[j])
-        }
+extension Sequence {
+    /// Returns an array with the contents of this sequence, shuffled.
+    func shuffled() -> [Iterator.Element] {
+        var result = Array(self)
+        result.shuffle()
+        return result
     }
 }

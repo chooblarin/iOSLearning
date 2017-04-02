@@ -4,7 +4,7 @@ class TabMenuView: UIView {
 
     // MARK: - Properties
 
-    var pageItemPressedBlock: ((index: Int, direction: UIPageViewControllerNavigationDirection) -> Void)?
+    var pageItemPressedBlock: ((_ index: Int, _ direction: UIPageViewControllerNavigationDirection) -> Void)?
     var pageTabItems: [String] = [] {
         didSet {
             pageTabItemsCount = pageTabItems.count
@@ -12,18 +12,18 @@ class TabMenuView: UIView {
         }
     }
 
-    private var isInfinity: Bool = false
-    private var option: TabMenuItemOption = TabMenuItemOption()
-    private var beforeIndex: Int = 0
-    private var currentIndex: Int = 0
-    private var pageTabItemsCount: Int = 0
-    private var shouldScrollToItem: Bool = false
-    private var pageTabItemsWidth: CGFloat = 0.0
-    private var collectionViewContentOffsetX: CGFloat = 0.0
-    private var currentBarViewWidth: CGFloat = 0.0
-    private var cellForSize: TabMenuCollectionViewCell!
-    private var cachedCellSizes: [NSIndexPath: CGSize] = [:]
-    private var selectedBarViewLeftConstraint: NSLayoutConstraint?
+    fileprivate var isInfinity: Bool = false
+    fileprivate var option: TabMenuItemOption = TabMenuItemOption()
+    fileprivate var beforeIndex: Int = 0
+    fileprivate var currentIndex: Int = 0
+    fileprivate var pageTabItemsCount: Int = 0
+    fileprivate var shouldScrollToItem: Bool = false
+    fileprivate var pageTabItemsWidth: CGFloat = 0.0
+    fileprivate var collectionViewContentOffsetX: CGFloat = 0.0
+    fileprivate var currentBarViewWidth: CGFloat = 0.0
+    fileprivate var cellForSize: TabMenuCollectionViewCell!
+    fileprivate var cachedCellSizes: [IndexPath: CGSize] = [:]
+    fileprivate var selectedBarViewLeftConstraint: NSLayoutConstraint?
 
     // MARK: - IBOutlets
 
@@ -34,53 +34,53 @@ class TabMenuView: UIView {
     @IBOutlet weak var bottomBarViewHeightConstraint: NSLayoutConstraint!
 
     init(isInfinity: Bool, option: TabMenuItemOption) {
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
         self.isInfinity = isInfinity
-        NSBundle(forClass: TabMenuView.self).loadNibNamed("TabMenuView", owner: self, options: nil)
+        Bundle(for: TabMenuView.self).loadNibNamed("TabMenuView", owner: self, options: nil)
         addSubview(contentView)
         contentView.backgroundColor = option.tabBackgroundColor
 
         let left = NSLayoutConstraint(
             item: contentView,
-            attribute: .Leading,
-            relatedBy: .Equal,
+            attribute: .leading,
+            relatedBy: .equal,
             toItem: self,
-            attribute: .Leading,
+            attribute: .leading,
             multiplier: 1.0,
             constant: 0.0)
         let top = NSLayoutConstraint(
             item: contentView,
-            attribute: .Top,
-            relatedBy: .Equal,
+            attribute: .top,
+            relatedBy: .equal,
             toItem: self,
-            attribute: .Top,
+            attribute: .top,
             multiplier: 1.0,
             constant: 0.0)
         let right = NSLayoutConstraint(
             item: self,
-            attribute: .Trailing,
-            relatedBy: .Equal,
+            attribute: .trailing,
+            relatedBy: .equal,
             toItem: contentView,
-            attribute: .Trailing,
+            attribute: .trailing,
             multiplier: 1.0,
             constant: 0.0)
         let bottom = NSLayoutConstraint (
             item: self,
-            attribute: .Bottom,
-            relatedBy: .Equal,
+            attribute: .bottom,
+            relatedBy: .equal,
             toItem: contentView,
-            attribute: .Bottom,
+            attribute: .bottom,
             multiplier: 1.0,
             constant: 0.0)
 
         contentView.translatesAutoresizingMaskIntoConstraints = false
         self.addConstraints([left, top, right, bottom])
 
-        let bundle = NSBundle(forClass: TabMenuView.self)
+        let bundle = Bundle(for: TabMenuView.self)
         let nib = UINib(nibName: "TabMenuCollectionViewCell", bundle: bundle)
         let cellIdentifier = TabMenuCollectionViewCell.cellIdentifier()
-        collectionView.registerNib(nib, forCellWithReuseIdentifier: cellIdentifier)
-        cellForSize = nib.instantiateWithOwner(nil, options: nil).first as! TabMenuCollectionViewCell
+        collectionView.register(nib, forCellWithReuseIdentifier: cellIdentifier)
+        cellForSize = nib.instantiate(withOwner: nil, options: nil).first as! TabMenuCollectionViewCell
 
         collectionView.scrollsToTop = false
 
@@ -91,24 +91,24 @@ class TabMenuView: UIView {
             selectedBarView.translatesAutoresizingMaskIntoConstraints = false
             let left = NSLayoutConstraint(
                 item: selectedBarView,
-                attribute: .Leading,
-                relatedBy: .Equal,
+                attribute: .leading,
+                relatedBy: .equal,
                 toItem: collectionView,
-                attribute: .Leading,
+                attribute: .leading,
                 multiplier: 1.0,
                 constant: 0.0)
             let top = NSLayoutConstraint(
                 item: selectedBarView,
-                attribute: .Top,
-                relatedBy: .Equal,
+                attribute: .top,
+                relatedBy: .equal,
                 toItem: collectionView,
-                attribute: .Top,
+                attribute: .top,
                 multiplier: 1.0,
                 constant: option.tabHeight - selectedBarView.frame.height)
             selectedBarViewLeftConstraint = left
             collectionView.addConstraints([left, top])
         }
-        bottomBarViewHeightConstraint.constant = 1.0 / UIScreen.mainScreen().scale
+        bottomBarViewHeightConstraint.constant = 1.0 / UIScreen.main.scale
     }
 
     required internal init?(coder aDecoder: NSCoder) {
@@ -118,7 +118,7 @@ class TabMenuView: UIView {
 
 extension TabMenuView {
 
-    func scrollCurrentBarView(index: Int, contentOffsetX: CGFloat) {
+    func scrollCurrentBarView(_ index: Int, contentOffsetX: CGFloat) {
         var nextIndex = isInfinity ? index + pageTabItemsCount : index
         if isInfinity && index == 0 && (beforeIndex - pageTabItemsCount) == pageTabItemsCount - 1 {
             // Calculate the index at the time of transition to the first item from the last item of pageTabItems
@@ -132,13 +132,13 @@ extension TabMenuView {
             collectionViewContentOffsetX = collectionView.contentOffset.x
         }
         
-        let currentIndexPath = NSIndexPath(forItem: currentIndex, inSection: 0)
-        let nextIndexPath = NSIndexPath(forItem: nextIndex, inSection: 0)
-        if let currentCell = collectionView.cellForItemAtIndexPath(currentIndexPath) as? TabMenuCollectionViewCell,
-            nextCell = collectionView.cellForItemAtIndexPath(nextIndexPath) as? TabMenuCollectionViewCell {
+        let currentIndexPath = IndexPath(item: currentIndex, section: 0)
+        let nextIndexPath = IndexPath(item: nextIndex, section: 0)
+        if let currentCell = collectionView.cellForItem(at: currentIndexPath) as? TabMenuCollectionViewCell,
+            let nextCell = collectionView.cellForItem(at: nextIndexPath) as? TabMenuCollectionViewCell {
             nextCell.setBarViewVisibility(false)
             currentCell.setBarViewVisibility(false)
-            selectedBarView.hidden = false
+            selectedBarView.isHidden = false
 
             if currentBarViewWidth == 0.0 {
                 currentBarViewWidth = currentCell.frame.width
@@ -171,19 +171,19 @@ extension TabMenuView {
     }
 
     func scrollToHorizontalCenter() {
-        let currentIndexPath = NSIndexPath(forItem: currentIndex, inSection: 0)
-        collectionView.scrollToItemAtIndexPath(currentIndexPath, atScrollPosition: .CenteredHorizontally, animated: false)
+        let currentIndexPath = IndexPath(item: currentIndex, section: 0)
+        collectionView.scrollToItem(at: currentIndexPath, at: .centeredHorizontally, animated: false)
         collectionViewContentOffsetX = collectionView.contentOffset.x
     }
 
-    func updateCurrentIndex(index: Int) {
+    func updateCurrentIndex(_ index: Int) {
         deselectVisibleCells()
         currentIndex = isInfinity ? index + pageTabItemsCount : index
-        let currentIndexPath = NSIndexPath(forItem: currentIndex, inSection: 0)
+        let currentIndexPath = IndexPath(item: currentIndex, section: 0)
         moveCurrentBarView(currentIndexPath, animated: !isInfinity)
     }
 
-    private func updateCurrentIndexForTap(index: Int) {
+    fileprivate func updateCurrentIndexForTap(_ index: Int) {
         deselectVisibleCells()
 
         if isInfinity && (index < pageTabItemsCount) || (pageTabItemsCount * 2 <= index) {
@@ -192,35 +192,35 @@ extension TabMenuView {
         } else {
             currentIndex = index
         }
-        let indexPath = NSIndexPath(forItem: index, inSection: 0)
+        let indexPath = IndexPath(item: index, section: 0)
         moveCurrentBarView(indexPath, animated: true)
     }
 
-    private func moveCurrentBarView(indexPath: NSIndexPath, animated: Bool) {
-        collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .CenteredHorizontally, animated: animated)
+    fileprivate func moveCurrentBarView(_ indexPath: IndexPath, animated: Bool) {
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: animated)
         layoutIfNeeded()
         collectionViewContentOffsetX = 0.0
         currentBarViewWidth = 0.0
-        if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? TabMenuCollectionViewCell {
-            selectedBarView.hidden = false
+        if let cell = collectionView.cellForItem(at: indexPath) as? TabMenuCollectionViewCell {
+            selectedBarView.isHidden = false
             cell.isCurrent = true
             cell.setBarViewVisibility(false)
             selectedBarViewWidthConstraint.constant = cell.frame.width
             if !isInfinity {
                 selectedBarViewLeftConstraint?.constant = cell.frame.origin.x
             }
-            UIView.animateWithDuration(0.2) {
+            UIView.animate(withDuration: 0.2, animations: {
                 self.layoutIfNeeded()
                 if !self.isInfinity {
-                    self.collectionView.userInteractionEnabled = true
+                    self.collectionView.isUserInteractionEnabled = true
                 }
-            }
+            }) 
         }
         beforeIndex = currentIndex
     }
 
-    private func deselectVisibleCells() {
-        collectionView.visibleCells()
+    fileprivate func deselectVisibleCells() {
+        collectionView.visibleCells
             .flatMap { $0 as? TabMenuCollectionViewCell }
             .forEach { $0.isCurrent = false }
     }
@@ -230,39 +230,40 @@ extension TabMenuView {
 
 extension TabMenuView: UICollectionViewDataSource {
 
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return isInfinity ? pageTabItemsCount * 3 : pageTabItemsCount
     }
 
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(TabMenuCollectionViewCell.cellIdentifier(), forIndexPath: indexPath) as! TabMenuCollectionViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TabMenuCollectionViewCell.cellIdentifier(), for: indexPath) as! TabMenuCollectionViewCell
         configureCell(cell, indexPath: indexPath)
         return cell
     }
 
-    private func configureCell(cell: TabMenuCollectionViewCell, indexPath: NSIndexPath) {
+    fileprivate func configureCell(_ cell: TabMenuCollectionViewCell, indexPath: IndexPath) {
         let adjustedIndex = isInfinity ? indexPath.item % pageTabItemsCount : indexPath.item
         cell.item = pageTabItems[adjustedIndex]
         cell.option = option
         cell.isCurrent = adjustedIndex == (currentIndex % pageTabItemsCount)
         cell.tabMenuItemPressedBlock = { [weak self, weak cell] in
-            var direction: UIPageViewControllerNavigationDirection = .Forward
-            if let pageTabItemsCount = self?.pageTabItemsCount, currentIndex = self?.currentIndex {
+            var direction: UIPageViewControllerNavigationDirection = .forward
+            if let pageTabItemsCount = self?.pageTabItemsCount,
+                let currentIndex = self?.currentIndex {
                 if self?.isInfinity == true {
                     if (indexPath.item < pageTabItemsCount) || (indexPath.item < currentIndex) {
-                        direction = .Reverse
+                        direction = .reverse
                     }
                 } else {
                     if indexPath.item < currentIndex {
-                        direction = .Reverse
+                        direction = .reverse
                     }
                 }
             }
-            self?.pageItemPressedBlock?(index: adjustedIndex, direction: direction)
+            self?.pageItemPressedBlock?(adjustedIndex, direction)
 
             if cell?.isCurrent == false {
                 // Not accept touch events to scroll the animation is finished
-                self?.collectionView.userInteractionEnabled = false
+                self?.collectionView.isUserInteractionEnabled = false
             }
             self?.updateCurrentIndexForTap(indexPath.item)
         }
@@ -273,11 +274,11 @@ extension TabMenuView: UICollectionViewDataSource {
 
 extension TabMenuView: UICollectionViewDelegate {
 
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        if scrollView.dragging {
-            selectedBarView.hidden = true
-            let indexPath = NSIndexPath(forItem: currentIndex, inSection: 0)
-            if let cell = collectionView.cellForItemAtIndexPath(indexPath) as? TabMenuCollectionViewCell {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.isDragging {
+            selectedBarView.isHidden = true
+            let indexPath = IndexPath(item: currentIndex, section: 0)
+            if let cell = collectionView.cellForItem(at: indexPath) as? TabMenuCollectionViewCell {
                 cell.setBarViewVisibility(true)
             }
         }
@@ -295,15 +296,15 @@ extension TabMenuView: UICollectionViewDelegate {
         }
     }
 
-    func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
-        collectionView.userInteractionEnabled = true
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        collectionView.isUserInteractionEnabled = true
 
         if !isInfinity {
             return
         }
         if shouldScrollToItem {
-            let indexPath = NSIndexPath(forItem: currentIndex, inSection: 0)
-            collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: .CenteredHorizontally, animated: true)
+            let indexPath = IndexPath(item: currentIndex, section: 0)
+            collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
             shouldScrollToItem = false
         }
     }
@@ -313,24 +314,24 @@ extension TabMenuView: UICollectionViewDelegate {
 
 extension TabMenuView: UICollectionViewDelegateFlowLayout {
 
-    func collectionView(collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if let size = cachedCellSizes[indexPath] {
             return size
         }
         configureCell(cellForSize, indexPath: indexPath)
-        let size = cellForSize.sizeThatFits(CGSizeMake(collectionView.bounds.width, option.tabHeight))
+        let size = cellForSize.sizeThatFits(CGSize(width: collectionView.bounds.width, height: option.tabHeight))
         cachedCellSizes[indexPath] = size
         return size
     }
 
-    func collectionView(collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0.0
     }
 
-    func collectionView(collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0.0
     }
 }

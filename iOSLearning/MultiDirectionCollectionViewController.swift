@@ -16,16 +16,16 @@ class MultiDirectionCollectionViewController: UICollectionViewController {
 // MARK: - UICollectionViewDataSource
 
 extension MultiDirectionCollectionViewController {
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 50
     }
 
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 30
     }
 
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(CustomCollectionViewCell.reusableIdentifier, forIndexPath: indexPath) as! CustomCollectionViewCell
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.reusableIdentifier, for: indexPath) as! CustomCollectionViewCell
         cell.label.text = "Sec \(indexPath.section) / Item \(indexPath.item)"
         return cell
     }
@@ -36,25 +36,25 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
     let CELL_HEIGHT: CGFloat = 30.0
     let CELL_WIDTH: CGFloat = 100.0
 
-    var attributesDictionary = [NSIndexPath:UICollectionViewLayoutAttributes]()
-    var contentSize = CGSizeZero
+    var attributesDictionary = [IndexPath:UICollectionViewLayoutAttributes]()
+    var contentSize = CGSize.zero
 
-    override func collectionViewContentSize() -> CGSize {
+    override var collectionViewContentSize : CGSize {
         return self.contentSize
     }
 
-    override func prepareLayout() {
-        let numOfSections = collectionView!.numberOfSections()
+    override func prepare() {
+        let numOfSections = collectionView!.numberOfSections
         if 0 < numOfSections {
             (0..<numOfSections).forEach { section in
-                let numOfItems = collectionView!.numberOfItemsInSection(section)
+                let numOfItems = collectionView!.numberOfItems(inSection: section)
                 if 0 < numOfItems {
                     (0..<numOfItems).forEach { i in
-                        let indexPath = NSIndexPath(forItem: i, inSection: section)
+                        let indexPath = IndexPath(item: i, section: section)
                         let x = CGFloat(i) * CELL_WIDTH
                         let y = CGFloat(section) * CELL_HEIGHT
-                        let attributes = UICollectionViewLayoutAttributes(forCellWithIndexPath: indexPath)
-                        attributes.frame = CGRectMake(x, y, CELL_WIDTH, CELL_HEIGHT)
+                        let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
+                        attributes.frame = CGRect(x: x, y: y, width: CELL_WIDTH, height: CELL_HEIGHT)
                         attributes.zIndex = 1
                         attributesDictionary[indexPath] = attributes
                     }
@@ -62,21 +62,21 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
             }
         }
         // Update content size.
-        let contentWidth = CGFloat(collectionView!.numberOfItemsInSection(0)) * CELL_WIDTH
-        let contentHeight = CGFloat(collectionView!.numberOfSections()) * CELL_HEIGHT
+        let contentWidth = CGFloat(collectionView!.numberOfItems(inSection: 0)) * CELL_WIDTH
+        let contentHeight = CGFloat(collectionView!.numberOfSections) * CELL_HEIGHT
         self.contentSize = CGSize(width: contentWidth, height: contentHeight)
     }
 
-    override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         return attributesDictionary.values
-            .filter { attrs -> Bool in CGRectIntersectsRect(rect, attrs.frame)}
+            .filter { attrs -> Bool in rect.intersects(attrs.frame)}
     }
 
-    override func layoutAttributesForItemAtIndexPath(indexPath: NSIndexPath) -> UICollectionViewLayoutAttributes? {
+    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         return attributesDictionary[indexPath]
     }
 
-    override func shouldInvalidateLayoutForBoundsChange(newBounds: CGRect) -> Bool {
+    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return true
     }
 }
