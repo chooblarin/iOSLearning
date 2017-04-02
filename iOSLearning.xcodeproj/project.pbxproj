@@ -12,8 +12,6 @@
 		FA02B5991CD316150062003E /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA02B5981CD316150062003E /* UIColor.swift */; };
 		FA0BF5EF1C815DE200A06ED6 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA0BF5E91C81591500A06ED6 /* RxSwift.framework */; };
 		FA0BF5F01C815DEF00A06ED6 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA0BF5E71C81590700A06ED6 /* RxCocoa.framework */; };
-		FA0E1AE21C75650000CD7ADF /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA0E1AE11C75650000CD7ADF /* Notification.storyboard */; };
-		FA0E1AE41C75652100CD7ADF /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0E1AE31C75652100CD7ADF /* NotificationViewController.swift */; };
 		FA162E301CFEE5AC00903AFB /* MultiDirectionCollectionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA162E2F1CFEE5AC00903AFB /* MultiDirectionCollectionView.storyboard */; };
 		FA162E321CFEE5DC00903AFB /* MultiDirectionCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA162E311CFEE5DC00903AFB /* MultiDirectionCollectionViewController.swift */; };
 		FA162E351CFEE6FE00903AFB /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA162E341CFEE6FE00903AFB /* CustomCollectionViewCell.swift */; };
@@ -89,8 +87,6 @@
 		FA02B5981CD316150062003E /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		FA0BF5E71C81590700A06ED6 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		FA0BF5E91C81591500A06ED6 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
-		FA0E1AE11C75650000CD7ADF /* Notification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
-		FA0E1AE31C75652100CD7ADF /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		FA162E2F1CFEE5AC00903AFB /* MultiDirectionCollectionView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MultiDirectionCollectionView.storyboard; sourceTree = "<group>"; };
 		FA162E311CFEE5DC00903AFB /* MultiDirectionCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiDirectionCollectionViewController.swift; sourceTree = "<group>"; };
 		FA162E341CFEE6FE00903AFB /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -226,15 +222,6 @@
 			name = Alert;
 			sourceTree = "<group>";
 		};
-		FA0E1AE51C75653800CD7ADF /* Notification */ = {
-			isa = PBXGroup;
-			children = (
-				FA0E1AE11C75650000CD7ADF /* Notification.storyboard */,
-				FA0E1AE31C75652100CD7ADF /* NotificationViewController.swift */,
-			);
-			name = Notification;
-			sourceTree = "<group>";
-		};
 		FA162E331CFEE6AF00903AFB /* MultiDirectionCollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,7 +332,6 @@
 				FABB07901C746945008CAB48 /* MasterViewController.swift */,
 				FABB07B01C746C68008CAB48 /* Example.swift */,
 				FA0E1AE01C75615F00CD7ADF /* Alert */,
-				FA0E1AE51C75653800CD7ADF /* Notification */,
 				FA0BF5F21C815FD600A06ED6 /* Pager */,
 				FA84099A1CE178C600D33FFC /* Pager2 */,
 				FA02B5921CD3106B0062003E /* PageWithScrollView */,
@@ -517,7 +503,6 @@
 				FABB07961C746945008CAB48 /* Main.storyboard in Resources */,
 				FABB07B31C747053008CAB48 /* Alert.storyboard in Resources */,
 				FA8409A81CE1E11000D33FFC /* WithWebView.storyboard in Resources */,
-				FA0E1AE21C75650000CD7ADF /* Notification.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,7 +546,6 @@
 				FAC873A61CD0808A00DB3BE2 /* TabMenuItemOption.swift in Sources */,
 				FAC873A41CD07D5B00DB3BE2 /* TabMenuCollectionViewCell.swift in Sources */,
 				FA8409A01CE179CA00D33FFC /* DataViewController.swift in Sources */,
-				FA0E1AE41C75652100CD7ADF /* NotificationViewController.swift in Sources */,
 				FA02B5991CD316150062003E /* UIColor.swift in Sources */,
 				FABBBE8B1CED62D100DE5A41 /* InfinityScrollViewController.swift in Sources */,
 				FAB21E0F1CC902880081A2DF /* CollectionViewCell.swift in Sources */,

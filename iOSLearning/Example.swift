@@ -2,7 +2,6 @@ import Foundation
 
 enum Example: String {
     case Alert
-    case Notification
     case Pager
     case Pager2
     case PagerWithScrollView
@@ -20,7 +19,6 @@ enum Example: String {
     static func allValues() -> [Example] {
         return [
             .Alert,
-            .Notification,
             .Pager,
             .Pager2,
             .PagerWithScrollView,
