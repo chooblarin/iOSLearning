@@ -1,5 +1,6 @@
 import UIKit
 import UserNotifications
+import CoreLocation
 
 class ViewController: UIViewController {
 
@@ -10,11 +11,13 @@ class ViewController: UIViewController {
         let button1 = UIButton(type: .system)
         button1.setTitle("Local notification after 3 seconds", for: .normal)
         let button2 = UIButton(type: .system)
-        button2.setTitle("Local notification with actions", for: .normal)
+        button2.setTitle("Local notification by location", for: .normal)
         let button3 = UIButton(type: .system)
-        button3.setTitle("Local notification with an attachment", for: .normal)
+        button3.setTitle("Local notification with actions", for: .normal)
+        let button4 = UIButton(type: .system)
+        button4.setTitle("Local notification with an attachment", for: .normal)
 
-        let stackView = UIStackView(arrangedSubviews: [button1, button2, button3])
+        let stackView = UIStackView(arrangedSubviews: [button1, button2, button3, button4])
         stackView.axis = .vertical
         stackView.distribution = .equalSpacing
         stackView.spacing = 10.0
@@ -25,8 +28,9 @@ class ViewController: UIViewController {
         stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
 
         button1.addTarget(self, action: #selector(notificationAfterThreeSeconds), for: .touchUpInside)
-        button2.addTarget(self, action: #selector(notificationWithActions), for: .touchUpInside)
-        button3.addTarget(self, action: #selector(notificationAttachment), for: .touchUpInside)
+        button2.addTarget(self, action: #selector(notificationLocation), for: .touchUpInside)
+        button3.addTarget(self, action: #selector(notificationWithActions), for: .touchUpInside)
+        button4.addTarget(self, action: #selector(notificationAttachment), for: .touchUpInside)
 
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.badge, .sound, .alert]) { (granted, error) in
@@ -35,6 +39,19 @@ class ViewController: UIViewController {
                 return
             }
             debugPrint("Granted: \(granted)")
+        }
+
+        let locationManager = CLLocationManager()
+        switch CLLocationManager.authorizationStatus() {
+        case .notDetermined:
+            locationManager.requestAlwaysAuthorization()
+        case .denied:
+            debugPrint("Denied")
+            break
+        case .authorizedAlways:
+            locationManager.startUpdatingLocation()
+        default:
+            break
         }
     }
 
@@ -47,6 +64,18 @@ class ViewController: UIViewController {
 
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3, repeats: false)
         let request = UNNotificationRequest(identifier: "Hello", content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    }
+
+    func notificationLocation() {
+        let content = UNMutableNotificationContent()
+        content.body = "You are near my office"
+        content.sound = UNNotificationSound.default()
+
+        let c = CLLocationCoordinate2D(latitude: 37.910191, longitude: 139.061664)
+        let region = CLCircularRegion(center: c, radius: 100.0, identifier: "office")
+        let trigger = UNLocationNotificationTrigger(region: region, repeats: false)
+        let request = UNNotificationRequest(identifier: "office", content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
 
