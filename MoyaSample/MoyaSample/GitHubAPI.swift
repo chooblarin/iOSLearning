@@ -1,8 +1,8 @@
 import Foundation
 import Moya
+import RxMoya
 
-
-let GitHubProvider = MoyaProvider<GitHub>(plugins: [NetworkLoggerPlugin(verbose: true)])
+let GitHubProvider = RxMoyaProvider<GitHub>(plugins: [NetworkLoggerPlugin(verbose: true)])
 
 // MARK: Provider support
 

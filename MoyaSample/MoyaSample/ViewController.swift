@@ -1,7 +1,10 @@
 import UIKit
+import RxSwift
 import Moya
 
 class ViewController: UIViewController {
+
+  let disposeBag = DisposeBag()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -16,14 +19,14 @@ class ViewController: UIViewController {
     label.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
     label.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
 
-    GitHubProvider.request(.userProfile("chooblarin")) { result in
-      switch result {
-      case .success(let response):
+    GitHubProvider.request(.userProfile("chooblarin")).subscribe { event in
+      switch event {
+      case .next(let response):
         label.text = String(data: response.data, encoding: .utf8)
-      case .failure(let error):
+      case .error(let error):
         debugPrint(error)
+      default: break
       }
-    }
+    }.addDisposableTo(disposeBag)
   }
 }
-
