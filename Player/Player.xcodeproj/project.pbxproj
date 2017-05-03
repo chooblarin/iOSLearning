@@ -11,6 +11,8 @@
 		FA4EE83E1EBA29E6001C8B56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4EE83D1EBA29E6001C8B56 /* ViewController.swift */; };
 		FA4EE8431EBA29E6001C8B56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA4EE8421EBA29E6001C8B56 /* Assets.xcassets */; };
 		FA4EE8461EBA29E6001C8B56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA4EE8441EBA29E6001C8B56 /* LaunchScreen.storyboard */; };
+		FA4EE8501EBA3159001C8B56 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4EE84E1EBA3159001C8B56 /* RxCocoa.framework */; };
+		FA4EE8511EBA3159001C8B56 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4EE84F1EBA3159001C8B56 /* RxSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		FA4EE8421EBA29E6001C8B56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA4EE8451EBA29E6001C8B56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA4EE8471EBA29E6001C8B56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA4EE84E1EBA3159001C8B56 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		FA4EE84F1EBA3159001C8B56 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +31,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA4EE8501EBA3159001C8B56 /* RxCocoa.framework in Frameworks */,
+				FA4EE8511EBA3159001C8B56 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +44,7 @@
 			children = (
 				FA4EE83A1EBA29E6001C8B56 /* Player */,
 				FA4EE8391EBA29E6001C8B56 /* Products */,
+				FA4EE84D1EBA3158001C8B56 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,6 +68,15 @@
 			path = Player;
 			sourceTree = "<group>";
 		};
+		FA4EE84D1EBA3158001C8B56 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA4EE84E1EBA3159001C8B56 /* RxCocoa.framework */,
+				FA4EE84F1EBA3159001C8B56 /* RxSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,6 +87,7 @@
 				FA4EE8341EBA29E6001C8B56 /* Sources */,
 				FA4EE8351EBA29E6001C8B56 /* Frameworks */,
 				FA4EE8361EBA29E6001C8B56 /* Resources */,
+				FA4EE8521EBA315E001C8B56 /* Carthage copy frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,6 +144,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FA4EE8521EBA315E001C8B56 /* Carthage copy frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+			);
+			name = "Carthage copy frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FA4EE8341EBA29E6001C8B56 /* Sources */ = {
@@ -250,6 +286,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = H6T775QPW5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Player/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sotahatakeyama.Player;
@@ -263,6 +303,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = H6T775QPW5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Player/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sotahatakeyama.Player;
