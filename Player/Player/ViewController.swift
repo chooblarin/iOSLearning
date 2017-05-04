@@ -6,6 +6,7 @@ class ViewController: UIViewController {
 
   let playerView: PlayerView = {
     let playerView = PlayerView()
+    playerView.layer.cornerRadius = 24.0
     playerView.backgroundColor = .lightGray
     return playerView
   }()
@@ -21,27 +22,29 @@ class ViewController: UIViewController {
     setupViews()
 
     playerView.slider.rx.controlEvent(.touchDown)
-      .subscribe(onNext: { [weak self] () in
-        // Stop
-        self?.timerDisposable?.dispose()
-      })
+      .subscribe(onNext: { [weak self] () in self?.pause() })
       .disposed(by: disposeBag)
 
-    playerView.playButton.rx.tap.subscribe(onNext: { () in
-      self.play()
-    }).addDisposableTo(disposeBag)
+    playerView.playButton.rx.tap
+      .subscribe(onNext: { () in self.onPlayTapped() })
+      .addDisposableTo(disposeBag)
   }
 
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
-    timerDisposable?.dispose()
+    pause()
+  }
+
+  func onPlayTapped() {
+    if let _ = timerDisposable {
+      pause()
+    } else {
+      play()
+    }
   }
 
   func play() {
-    if let disposable = timerDisposable {
-      disposable.dispose()
-    }
-
+    playerView.isPlaying = true
     timerDisposable = Observable<Int>
       .interval(0.05, scheduler: MainScheduler.instance)
       .take(200)
@@ -51,10 +54,16 @@ class ViewController: UIViewController {
       })
   }
 
+  func pause() {
+    timerDisposable?.dispose()
+    playerView.isPlaying = false
+    timerDisposable = nil
+  }
+
   private func setupViews() {
     view.addSubview(playerView)
     playerView.translatesAutoresizingMaskIntoConstraints = false
-    playerView.heightAnchor.constraint(equalToConstant: 64.0).isActive = true
+    playerView.heightAnchor.constraint(equalToConstant: 48.0).isActive = true
     playerView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     playerView.leadingAnchor
       .constraint(equalTo: view.leadingAnchor, constant: 20.0).isActive = true
