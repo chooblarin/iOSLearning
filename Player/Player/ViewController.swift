@@ -4,22 +4,10 @@ import RxSwift
 
 class ViewController: UIViewController {
 
-  let containerPlayer: UIView = {
-    let containerView = UIView()
-    containerView.backgroundColor = .lightGray
-    return containerView
-  }()
-  let togglePlayButton: UIButton = {
-    let button = UIButton()
-    button.backgroundColor = .blue
-    return button
-  }()
-  let slider: UISlider = {
-    let slider = UISlider()
-    slider.thumbTintColor = .blue
-    slider.maximumTrackTintColor = .red
-    slider.minimumTrackTintColor = .green
-    return slider
+  let playerView: PlayerView = {
+    let playerView = PlayerView()
+    playerView.backgroundColor = .lightGray
+    return playerView
   }()
 
   let disposeBag: DisposeBag = DisposeBag()
@@ -32,7 +20,14 @@ class ViewController: UIViewController {
 
     setupViews()
 
-    togglePlayButton.rx.tap.subscribe(onNext: { () in
+    playerView.slider.rx.controlEvent(.touchDown)
+      .subscribe(onNext: { [weak self] () in
+        // Stop
+        self?.timerDisposable?.dispose()
+      })
+      .disposed(by: disposeBag)
+
+    playerView.playButton.rx.tap.subscribe(onNext: { () in
       self.play()
     }).addDisposableTo(disposeBag)
   }
@@ -48,41 +43,22 @@ class ViewController: UIViewController {
     }
 
     timerDisposable = Observable<Int>
-      .interval(1, scheduler: MainScheduler.instance)
-      .take(10)
+      .interval(0.05, scheduler: MainScheduler.instance)
+      .take(200)
       .subscribe(onNext: { [weak self] (val: Int) in
-        let floatVal = Float(val + 1) / 10.0
-        debugPrint("val: \(floatVal)")
-        self?.slider.setValue(floatVal, animated: true)
+        let floatVal = Float(val + 1) / 200.0
+        self?.playerView.slider.setValue(floatVal, animated: true)
       })
   }
 
   private func setupViews() {
-    containerPlayer.addSubview(togglePlayButton)
-    togglePlayButton.translatesAutoresizingMaskIntoConstraints = false
-    togglePlayButton.widthAnchor.constraint(equalToConstant: 32.0).isActive = true
-    togglePlayButton.heightAnchor.constraint(equalToConstant: 32.0).isActive = true
-    togglePlayButton.leadingAnchor
-      .constraint(equalTo: containerPlayer.leadingAnchor, constant: 16.0).isActive = true
-    togglePlayButton.centerYAnchor
-      .constraint(equalTo: containerPlayer.centerYAnchor).isActive = true
-
-    containerPlayer.addSubview(slider)
-    slider.translatesAutoresizingMaskIntoConstraints = false
-    slider.heightAnchor.constraint(equalToConstant: 24.0).isActive = true
-    slider.centerYAnchor.constraint(equalTo: containerPlayer.centerYAnchor).isActive = true
-    slider.leadingAnchor
-      .constraint(equalTo: togglePlayButton.trailingAnchor, constant: 8.0).isActive = true
-    slider.trailingAnchor
-      .constraint(equalTo: containerPlayer.trailingAnchor, constant: -12.0).isActive = true
-
-    view.addSubview(containerPlayer)
-    containerPlayer.translatesAutoresizingMaskIntoConstraints = false
-    containerPlayer.heightAnchor.constraint(equalToConstant: 64.0).isActive = true
-    containerPlayer.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-    containerPlayer.leadingAnchor
+    view.addSubview(playerView)
+    playerView.translatesAutoresizingMaskIntoConstraints = false
+    playerView.heightAnchor.constraint(equalToConstant: 64.0).isActive = true
+    playerView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    playerView.leadingAnchor
       .constraint(equalTo: view.leadingAnchor, constant: 20.0).isActive = true
-    containerPlayer.trailingAnchor
+    playerView.trailingAnchor
       .constraint(equalTo: view.trailingAnchor, constant: -20.0).isActive = true
   }
 }
